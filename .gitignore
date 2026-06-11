@@ -1,1 +1,4 @@
+# Claude Code — configuración local de sesión (personal, no compartir)
+.claude/settings.local.json
+
 .DS_Store

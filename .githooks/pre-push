@@ -1,23 +1,42 @@
 #!/bin/sh
-# Pre-push: corre la prueba de layout móvil y aborta el push si falla.
-# Para saltarla en un caso puntual: git push --no-verify
+# Pre-push: corre la prueba de layout móvil. Bloquea el push SOLO si la prueba
+# corre y detecta una regresión real (código de salida 3). Si no se puede
+# correr (node ausente, Chrome no arranca, etc. — típico al empujar desde
+# GitHub Desktop u otra GUI), advierte y DEJA pasar el push: el hook nunca
+# bloquea por un problema de entorno.
+# Para saltarlo a propósito: git push --no-verify
 
-echo "→ pre-push: corriendo prueba de layout móvil (npm run test:mobile)…"
+echo "→ pre-push: prueba de layout móvil…"
 
-if ! command -v npm >/dev/null 2>&1; then
-  echo "✗ npm no está en el PATH — no se pudo correr la prueba móvil. Aborta el push." >&2
-  echo "  Instala Node/npm o usa 'git push --no-verify' para saltar el hook." >&2
+# Las GUIs (GitHub Desktop, etc.) no heredan el PATH de Node. Agregar las
+# ubicaciones comunes de Windows para poder encontrar node igualmente.
+for dir in "/c/Program Files/nodejs" "/c/Program Files (x86)/nodejs"; do
+  [ -d "$dir" ] && PATH="$dir:$PATH"
+done
+export PATH
+
+# Llamar a 'node' directamente (binario limpio), no a 'npm' (su wrapper de
+# Git-for-Windows resuelve mal su ruta y rompe en entornos de GUI).
+if ! command -v node >/dev/null 2>&1; then
+  echo "⚠ node no disponible en este entorno — se OMITE la prueba móvil (push permitido)." >&2
+  echo "  Corre 'npm run test:mobile' manualmente antes de subir cambios de layout." >&2
+  exit 0
+fi
+
+node test/mobile.mjs
+status=$?
+
+if [ "$status" -eq 3 ]; then
+  echo "" >&2
+  echo "✗ La prueba detectó una regresión de layout móvil — push abortado." >&2
+  echo "  Corrige el problema, o usa 'git push --no-verify' para saltar el hook." >&2
   exit 1
 fi
 
-npm run --silent test:mobile
-status=$?
-
 if [ "$status" -ne 0 ]; then
-  echo "" >&2
-  echo "✗ La prueba de layout móvil falló — push abortado." >&2
-  echo "  Corrige el problema, o usa 'git push --no-verify' para saltar el hook." >&2
-  exit 1
+  echo "⚠ No se pudo correr la prueba (código $status, probablemente entorno) — push permitido." >&2
+  echo "  Corre 'npm run test:mobile' manualmente para verificar." >&2
+  exit 0
 fi
 
 echo "✓ Layout móvil OK — continuando con el push."

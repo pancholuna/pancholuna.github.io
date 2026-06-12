@@ -103,7 +103,10 @@ await browser.close();
 console.log(`\nCapturas en test/screenshots/`);
 if (failures > 0) {
   console.log(`${failures} ancho(s) con problemas.`);
-  process.exitCode = 1;
+  // Código distintivo: "la prueba corrió y encontró una regresión real".
+  // Otros fallos (node/Chrome ausente, crash) salen con el código por defecto,
+  // y el hook pre-push los distingue de esto para no bloquear por entorno.
+  process.exitCode = 3;
 } else {
   console.log('Todo en orden en móvil.');
 }

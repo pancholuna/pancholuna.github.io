@@ -17,3 +17,15 @@ ni que el nombre del hero se parta. Guarda capturas en `test/screenshots/`
 (ignoradas por git) para revisión visual.
 
 Requiere Google Chrome instalado. No descarga navegadores.
+
+### Hook pre-push
+
+Hay un hook en `.githooks/pre-push` que corre esta prueba automáticamente
+antes de cada `git push` y aborta el push si falla. En un clon nuevo se activa
+una sola vez con:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Para saltarlo en un caso puntual: `git push --no-verify`.

@@ -1,0 +1,2 @@
+# Los hooks deben tener saltos de línea LF o sh falla en Windows.
+.githooks/** text eol=lf

@@ -1,0 +1,24 @@
+#!/bin/sh
+# Pre-push: corre la prueba de layout móvil y aborta el push si falla.
+# Para saltarla en un caso puntual: git push --no-verify
+
+echo "→ pre-push: corriendo prueba de layout móvil (npm run test:mobile)…"
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "✗ npm no está en el PATH — no se pudo correr la prueba móvil. Aborta el push." >&2
+  echo "  Instala Node/npm o usa 'git push --no-verify' para saltar el hook." >&2
+  exit 1
+fi
+
+npm run --silent test:mobile
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo "" >&2
+  echo "✗ La prueba de layout móvil falló — push abortado." >&2
+  echo "  Corrige el problema, o usa 'git push --no-verify' para saltar el hook." >&2
+  exit 1
+fi
+
+echo "✓ Layout móvil OK — continuando con el push."
+exit 0

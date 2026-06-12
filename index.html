@@ -215,7 +215,7 @@
 
   h1 {
     font-family: var(--font-display);
-    font-size: clamp(3.0rem, 9.5vw, 8.5rem);
+    font-size: clamp(2.75rem, 9.5vw, 8.5rem);
     line-height: 1.10;
     letter-spacing: -0.01em;
     color: var(--text);
@@ -894,6 +894,12 @@
     .hero-blob-2 { width: 70vw; height: 70vw; }
     .hero-blob-3 { width: 60vw; height: 60vw; right: 10%; }
     .hero-blob-4 { display: none; }
+  }
+
+  /* Pantallas muy chicas: los dos botones del hero no caben lado a lado */
+  @media (max-width: 360px) {
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .hero-cta a { width: 100%; justify-content: center; }
   }
 </style>
 </head>

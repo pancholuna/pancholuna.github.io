@@ -215,12 +215,14 @@
 
   h1 {
     font-family: var(--font-display);
-    font-size: clamp(3.8rem, 9.5vw, 8.5rem);
-    line-height: 0.93;
+    font-size: clamp(3.0rem, 9.5vw, 8.5rem);
+    line-height: 1.10;
     letter-spacing: -0.01em;
     color: var(--text);
     margin-bottom: 1.75rem;
     position: relative;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .hero-pills {
@@ -919,7 +921,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="inicio" style="border:none; max-width:100%; padding-left:2.5rem; padding-right:2.5rem;">
+<section class="hero" id="inicio" style="border:none; max-width:100%;">
   <div class="hero-bg">
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>

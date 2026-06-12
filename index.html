@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francisco Calleja Luna — Portafolio</title>
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -98,6 +99,33 @@
   }
 
   .nav-links a:hover { color: var(--text); }
+
+  /* Hamburguesa — solo visible en móvil */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.2s;
+  }
+
+  nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   .lang-toggle {
     display: flex;
@@ -775,6 +803,35 @@
 
   .icon-dl::before { content: '↓ '; }
 
+  /* SCROLL REVEAL — condicionado a .js; sin JS todo queda visible */
+  .js .timeline-item,
+  .js .stat-item,
+  .js .skill-card,
+  .js .edu-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .js .timeline-item.in-view,
+  .js .stat-item.in-view,
+  .js .skill-card.in-view,
+  .js .edu-card.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .timeline-item,
+    .js .stat-item,
+    .js .skill-card,
+    .js .edu-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
   /* LANG VISIBILITY */
   [data-lang="en"] { display: none; }
   body.en [data-lang="en"] { display: initial; }
@@ -797,7 +854,34 @@
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
-    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      padding: 0.25rem 1.25rem 0.75rem;
+      background: rgba(217,217,217,0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+    }
+    nav.nav-open .nav-links {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-links li { width: 100%; border-bottom: 1px solid var(--border); }
+    .nav-links li:last-child { border-bottom: none; }
+    /* Anchors a ancho completo, respetando el toggle de idioma */
+    .nav-links a[data-lang="es"] { display: block; padding: 0.85rem 0; font-size: 0.82rem; }
+    body.en .nav-links a[data-lang="es"] { display: none; }
+    body.en .nav-links a[data-lang="en"] { display: block; padding: 0.85rem 0; font-size: 0.82rem; }
     .hero { padding: 6rem 1.25rem 3rem; }
     .section-wrap { padding: 3.5rem 1.25rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -817,7 +901,7 @@
 <nav>
   <a href="#inicio" class="nav-logo">FCL</a>
   <div class="nav-right">
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-menu">
       <li><a href="#sobre-mi" data-lang="es">Perfil</a><a href="#sobre-mi" data-lang="en">Profile</a></li>
       <li><a href="#experiencia" data-lang="es">Experiencia</a><a href="#experiencia" data-lang="en">Background</a></li>
       <li><a href="#habilidades" data-lang="es">Habilidades</a><a href="#habilidades" data-lang="en">Skills</a></li>
@@ -828,6 +912,9 @@
       <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
       <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
     </div>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -937,21 +1024,21 @@
 
            VIDEO / REEL (abre Instagram en pestaña nueva):
              <a class="gallery-item gallery-video" href="URL_DEL_REEL" target="_blank" rel="noopener" aria-label="Ver reel">
-               <img src="img/ibero/ARCHIVO.png" alt="DESCRIPCIÓN" loading="lazy">
+               <img src="img/ibero/ARCHIVO.webp" alt="DESCRIPCIÓN" loading="lazy">
                <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
                <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
              </a>
 
            IMAGEN (abre el lightbox in-page):
-             <button class="gallery-item" onclick="openLightbox('img/ibero/ARCHIVO.png','DESCRIPCIÓN')">
-               <img src="img/ibero/ARCHIVO.png" alt="DESCRIPCIÓN" loading="lazy">
+             <button class="gallery-item" onclick="openLightbox('img/ibero/ARCHIVO.webp','DESCRIPCIÓN')">
+               <img src="img/ibero/ARCHIVO.webp" alt="DESCRIPCIÓN" loading="lazy">
              </button>
       ===================================================================== -->
       <div class="gallery-label" data-lang="es">Trabajo destacado</div>
       <div class="gallery-label" data-lang="en">Selected work</div>
       <div class="work-gallery">
         <a class="gallery-item gallery-video" href="https://www.instagram.com/p/DXsX3-dDUu0/" target="_blank" rel="noopener" aria-label="Ver reel: colibrí y maguey (Instagram)">
-          <img src="img/ibero/maguey.png" alt="Colibrí alimentándose de una flor de maguey — reel para Vida Ibero" loading="lazy">
+          <img src="img/ibero/maguey.webp" alt="Colibrí alimentándose de una flor de maguey — reel para Vida Ibero" loading="lazy">
           <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
           <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
         </a>
@@ -1129,16 +1216,22 @@
       <div class="edu-year">2012 – 2013</div>
     </div>
     <div class="edu-card">
-      <div class="edu-degree" data-lang="es">Certificación Google Ads + Fundamentos de Marketing Digital</div>
-      <div class="edu-degree" data-lang="en">Google Ads Certification + Digital Marketing Fundamentals</div>
-      <div class="edu-school">Cultura UNAM / Google Skillshop</div>
+      <div class="edu-degree" data-lang="es">Capacitación y Certificación Google Ads</div>
+      <div class="edu-degree" data-lang="en">Google Ads Certification</div>
+      <div class="edu-school">Cultura UNAM</div>
+      <div class="edu-year">2019</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree" data-lang="es">Certificación “The Fundamentals of Digital Marketing”</div>
+      <div class="edu-degree" data-lang="en">Certification “The Fundamentals of Digital Marketing”</div>
+      <div class="edu-school">Google Skillshop</div>
       <div class="edu-year">2019</div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<div class="contact-section" id="contacto">
+<section class="contact-section" id="contacto">
   <div class="contact-blob contact-blob-1"></div>
   <div class="contact-blob contact-blob-2"></div>
   <div class="section-label" data-lang="es">Contacto</div>
@@ -1151,7 +1244,7 @@
     <a href="PacoCL_CV_ES.pdf" download class="btn-ghost" data-lang="es"><span class="icon-dl"></span>CV Español</a>
     <a href="PacoCL_CV_EN.pdf" download class="btn-ghost" data-lang="en"><span class="icon-dl"></span>CV English</a>
   </div>
-</div>
+</section>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
@@ -1176,6 +1269,22 @@
     });
     document.documentElement.setAttribute('lang', lang);
   }
+
+  // NAV MÓVIL
+  function toggleNav() {
+    var nav = document.querySelector('nav');
+    var btn = document.querySelector('.nav-toggle');
+    var open = nav.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      var nav = document.querySelector('nav');
+      if (nav.classList.contains('nav-open')) { toggleNav(); }
+    });
+  });
 
   // LIGHTBOX
   var lightbox = document.getElementById('lightbox');
@@ -1207,6 +1316,22 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) { closeLightbox(); }
   });
+
+  // SCROLL REVEAL
+  var revealEls = document.querySelectorAll('.timeline-item, .stat-item, .skill-card, .edu-card');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('in-view'); });
+  }
 
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');

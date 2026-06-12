@@ -466,6 +466,174 @@
     background: rgba(255,255,255,0.3);
   }
 
+  /* WORK GALLERY — portafolio por experiencia */
+  .work-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.1rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    display: block;
+    width: clamp(132px, 24vw, 176px);
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    padding: 0;
+    cursor: pointer;
+    background: var(--bg3);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .gallery-item:hover,
+  .gallery-item:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--accent1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  /* Overlay sutil para legibilidad de los badges */
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, transparent 38%, transparent 62%, rgba(0,0,0,0.28) 100%);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+  }
+
+  .gallery-item:hover::after,
+  .gallery-item:focus-visible::after { opacity: 1; }
+
+  /* Pill esquina: tipo de pieza (Reel / imagen) */
+  .gallery-badge {
+    position: absolute;
+    top: 0.45rem;
+    left: 0.45rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.18rem 0.5rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(26,24,22,0.62);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+  }
+
+  .gallery-badge svg { width: 0.7rem; height: 0.7rem; display: block; }
+
+  /* Botón play centrado para piezas de video */
+  .gallery-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 2;
+    width: 2.6rem; height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+  }
+
+  .gallery-item:hover .gallery-play,
+  .gallery-item:focus-visible .gallery-play {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .gallery-play svg { width: 1.1rem; height: 1.1rem; fill: #fff; margin-left: 2px; }
+
+  .gallery-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 1.1rem;
+    margin-bottom: -0.2rem;
+  }
+
+  /* LIGHTBOX — visor de imágenes */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(20,18,16,0.88);
+    backdrop-filter: blur(8px);
+  }
+
+  .lightbox.open {
+    display: flex;
+    animation: lb-fade 0.2s ease;
+  }
+
+  @keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
+
+  .lightbox img {
+    max-width: min(92vw, 1100px);
+    max-height: 86vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.25rem; right: 1.5rem;
+    width: 2.6rem; height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+  .lightbox-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.85);
+  }
+
   /* SKILLS */
   .skills-grid {
     display: grid;
@@ -657,8 +825,8 @@
       <li><a href="#contacto" data-lang="es">Contacto</a><a href="#contacto" data-lang="en">Contact</a></li>
     </ul>
     <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
+      <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
     </div>
   </div>
 </nav>
@@ -757,6 +925,36 @@
       <p class="job-desc" data-lang="en">Led content strategy and social media management for Vida Ibero across TikTok, Instagram, and Facebook. Managed prospective student engagement through Salesforce CRM. Produced audiovisual content and directed collaboration with vendors and agencies. Secured strategic partnerships with brands and institutions including Cineteca Nacional, CapCut, Topo Chico, Sharpie, and Sport City.</p>
       <div class="job-tags">
         <span class="tag">TikTok</span><span class="tag">Instagram</span><span class="tag">Salesforce</span><span class="tag" data-lang="es">Producción audiovisual</span><span class="tag" data-lang="en">Audiovisual</span><span class="tag" data-lang="es">Alianzas</span><span class="tag" data-lang="en">Partnerships</span>
+      </div>
+
+      <!-- ====================================================================
+           PORTAFOLIO DE LA EXPERIENCIA  ·  cómo agregar más piezas
+           --------------------------------------------------------------------
+           1. Guarda la imagen en  img/<carpeta-de-esta-experiencia>/  (p. ej.
+              img/ibero/, img/casa-del-lago/). Redúcela a ~800px de ancho y
+              comprímela (idealmente .webp) — no subas fotos de cámara sin optimizar.
+           2. Copia uno de los bloques de abajo dentro de <div class="work-gallery">.
+
+           VIDEO / REEL (abre Instagram en pestaña nueva):
+             <a class="gallery-item gallery-video" href="URL_DEL_REEL" target="_blank" rel="noopener" aria-label="Ver reel">
+               <img src="img/ibero/ARCHIVO.png" alt="DESCRIPCIÓN" loading="lazy">
+               <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
+               <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+             </a>
+
+           IMAGEN (abre el lightbox in-page):
+             <button class="gallery-item" onclick="openLightbox('img/ibero/ARCHIVO.png','DESCRIPCIÓN')">
+               <img src="img/ibero/ARCHIVO.png" alt="DESCRIPCIÓN" loading="lazy">
+             </button>
+      ===================================================================== -->
+      <div class="gallery-label" data-lang="es">Trabajo destacado</div>
+      <div class="gallery-label" data-lang="en">Selected work</div>
+      <div class="work-gallery">
+        <a class="gallery-item gallery-video" href="https://www.instagram.com/p/DXsX3-dDUu0/" target="_blank" rel="noopener" aria-label="Ver reel: colibrí y maguey (Instagram)">
+          <img src="img/ibero/maguey.png" alt="Colibrí alimentándose de una flor de maguey — reel para Vida Ibero" loading="lazy">
+          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
+          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </a>
       </div>
     </div>
 
@@ -955,6 +1153,13 @@
   </div>
 </div>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <button class="lightbox-close" aria-label="Cerrar" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
 <footer>
   <p>© 2026 Francisco Calleja Luna — CDMX, México</p>
   <p data-lang="es">Hecho con cariño y mucho contenido.</p>
@@ -965,10 +1170,43 @@
   function setLang(lang) {
     document.body.classList.toggle('en', lang === 'en');
     document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+      var active = btn.textContent === lang.toUpperCase();
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
     document.documentElement.setAttribute('lang', lang);
   }
+
+  // LIGHTBOX
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var lastFocused = null;
+
+  function openLightbox(src, caption) {
+    lastFocused = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.lightbox-close').focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocused) { lastFocused.focus(); }
+  }
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) { closeLightbox(); }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) { closeLightbox(); }
+  });
 
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');

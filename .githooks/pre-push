@@ -1,9 +1,8 @@
 #!/bin/sh
-# Pre-push: corre la prueba de layout móvil. Bloquea el push SOLO si la prueba
-# corre y detecta una regresión real (código de salida 3). Si no se puede
-# correr (node ausente, Chrome no arranca, etc. — típico al empujar desde
-# GitHub Desktop u otra GUI), advierte y DEJA pasar el push: el hook nunca
-# bloquea por un problema de entorno.
+# Pre-push: corre las pruebas de layout móvil y de galería. Bloquea el push
+# SOLO si alguna prueba corre y detecta una regresión real (código de salida 3).
+# Si no se puede correr (node ausente, Chromium no arranca, etc. — típico al
+# empujar desde GitHub Desktop u otra GUI), advierte y DEJA pasar el push.
 # Para saltarlo a propósito: git push --no-verify
 
 echo "→ pre-push: prueba de layout móvil…"
@@ -39,5 +38,25 @@ if [ "$status" -ne 0 ]; then
   exit 0
 fi
 
-echo "✓ Layout móvil OK — continuando con el push."
+echo "✓ Layout móvil OK."
+
+echo "→ pre-push: prueba de galería…"
+
+node test/gallery.mjs
+status=$?
+
+if [ "$status" -eq 3 ]; then
+  echo "" >&2
+  echo "✗ La prueba detectó un problema en la galería — push abortado." >&2
+  echo "  Corrige el problema, o usa 'git push --no-verify' para saltar el hook." >&2
+  exit 1
+fi
+
+if [ "$status" -ne 0 ]; then
+  echo "⚠ No se pudo correr la prueba de galería (código $status) — push permitido." >&2
+  echo "  Corre 'npm run test:gallery' manualmente para verificar." >&2
+  exit 0
+fi
+
+echo "✓ Galería OK — continuando con el push."
 exit 0

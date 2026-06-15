@@ -5,7 +5,8 @@
   "type": "module",
   "description": "CV + Portafolio — sitio estático",
   "scripts": {
-    "test:mobile": "node test/mobile.mjs"
+    "test:mobile": "node test/mobile.mjs",
+    "test:gallery": "node test/gallery.mjs"
   },
   "devDependencies": {
     "playwright": "^1.49.0"

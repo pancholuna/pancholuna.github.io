@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francisco Calleja Luna — Portafolio</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -836,14 +837,8 @@
 
   /* LANG VISIBILITY */
   [data-lang="en"] { display: none; }
-  body.en [data-lang="en"] { display: initial; }
+  body.en [data-lang="en"] { display: revert; }
   body.en [data-lang="es"] { display: none; }
-  body.en div[data-lang="en"],
-  body.en li[data-lang="en"],
-  body.en ul[data-lang="en"] { display: block; }
-  body.en div[data-lang="es"],
-  body.en li[data-lang="es"],
-  body.en ul[data-lang="es"] { display: none; }
 
   a:focus-visible, button:focus-visible {
     outline: 2px solid var(--accent1);

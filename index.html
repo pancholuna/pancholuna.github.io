@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francisco Calleja Luna — Portafolio</title>
+<meta name="description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Francisco Calleja Luna — Portafolio">
+<meta property="og:description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
+<meta property="og:url" content="https://pancholuna.github.io">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +37,7 @@
     --bg: #d9d9d9;
     --bg2: #cbcbcb;
     --bg3: #c0c0c0;
-    --text: #1a1816;
+    --text: #000000;
     --text-muted: #3d3b38;
     --text-dim: #7a7773;
     --accent1: #ed5b72;
@@ -490,6 +496,26 @@
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-top: 0.75rem;
+  }
+
+  .job-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 1rem 0 0.25rem;
+  }
+
+  .job-stat-number {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--accent1);
+    line-height: 1;
+  }
+
+  .job-stat-label {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
   }
 
   .tag {
@@ -1012,10 +1038,17 @@
 
     <div class="timeline-item">
       <div class="job-header">
-        <span class="job-title">Universidad Iberoamericana CDMX</span>
+        <span class="job-title">Content Marketing Manager</span>
+        <span class="job-period">2024–2026</span>
       </div>
+      <div class="job-company">Universidad Iberoamericana CDMX</div>
       <div class="job-tags">
         <span class="tag">TikTok</span><span class="tag">Instagram</span><span class="tag">Salesforce</span><span class="tag" data-lang="es">Producción audiovisual</span><span class="tag" data-lang="en">Audiovisual</span><span class="tag" data-lang="es">Alianzas</span><span class="tag" data-lang="en">Partnerships</span>
+      </div>
+      <div class="job-stat">
+        <span class="job-stat-number">+150</span>
+        <span class="job-stat-label" data-lang="es">piezas audiovisuales producidas</span>
+        <span class="job-stat-label" data-lang="en">audiovisual pieces produced</span>
       </div>
 
       <!-- ====================================================================
@@ -1091,10 +1124,17 @@
 
     <div class="timeline-item">
       <div class="job-header">
-        <span class="job-title">Casa del Lago UNAM</span>
+        <span class="job-title">Social Media Manager</span>
+        <span class="job-period">2018–2024</span>
       </div>
+      <div class="job-company">Casa del Lago UNAM</div>
       <div class="job-tags">
         <span class="tag">Facebook</span><span class="tag">X / Twitter</span><span class="tag" data-lang="es">Editorial cine</span><span class="tag" data-lang="en">Film editorial</span><span class="tag" data-lang="es">Métricas</span><span class="tag" data-lang="en">Analytics</span>
+      </div>
+      <div class="job-stat">
+        <span class="job-stat-number">+50%</span>
+        <span class="job-stat-label" data-lang="es">crecimiento de audiencia en 6 años</span>
+        <span class="job-stat-label" data-lang="en">audience growth over 6 years</span>
       </div>
       <div class="gallery-label" data-lang="es">Trabajo destacado</div>
       <div class="gallery-label" data-lang="en">Selected work</div>
@@ -1119,10 +1159,17 @@
 
     <div class="timeline-item">
       <div class="job-header">
-        <span class="job-title">Festival Internacional de Cine de Morelia — FICM</span>
+        <span class="job-title">Social Media Manager</span>
+        <span class="job-period">2016–2018</span>
       </div>
+      <div class="job-company">Festival Internacional de Cine de Morelia — FICM</div>
       <div class="job-tags">
         <span class="tag">YouTube</span><span class="tag">Google+</span><span class="tag" data-lang="es">Reputación digital</span><span class="tag" data-lang="en">Digital reputation</span><span class="tag" data-lang="es">Cobertura</span><span class="tag" data-lang="en">Event coverage</span>
+      </div>
+      <div class="job-stat">
+        <span class="job-stat-number">+80%</span>
+        <span class="job-stat-label" data-lang="es">alcance combinado en 5 plataformas</span>
+        <span class="job-stat-label" data-lang="en">combined reach across 5 platforms</span>
       </div>
       <div class="gallery-label" data-lang="es">Trabajo destacado</div>
       <div class="gallery-label" data-lang="en">Selected work</div>
@@ -1147,8 +1194,11 @@
 
     <div class="timeline-item">
       <div class="job-header">
-        <span class="job-title">Cinema 23 — Premios Fénix</span>
+        <span class="job-title" data-lang="es">Asistente de Dirección</span>
+        <span class="job-title" data-lang="en">Director's Assistant</span>
+        <span class="job-period">2012–2014</span>
       </div>
+      <div class="job-company">Cinema 23 — Premios Fénix</div>
       <div class="gallery-label" data-lang="es">Trabajo destacado</div>
       <div class="gallery-label" data-lang="en">Selected work</div>
       <div class="work-gallery">
@@ -1269,6 +1319,7 @@
   <div class="contact-links">
     <a href="mailto:fcocalu@gmail.com" class="btn-primary">fcocalu@gmail.com</a>
     <a href="tel:+525534495228" class="btn-ghost">+52 55 3449 5228</a>
+    <a href="https://www.linkedin.com/in/fcocalu/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
     <a href="PacoCL_CV_ES.pdf" download class="btn-ghost" data-lang="es"><span class="icon-dl"></span>CV Español</a>
     <a href="PacoCL_CV_EN.pdf" download class="btn-ghost" data-lang="en"><span class="icon-dl"></span>CV English</a>
   </div>

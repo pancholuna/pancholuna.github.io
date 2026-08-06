@@ -47,12 +47,16 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
+    background: radial-gradient(140% 140% at 0% 0%, #ffe046 0%, #e26a00 50%, #1ebda5 100%) fixed;
     color: var(--text);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+  }
+
+  body.en {
+    background: radial-gradient(140% 140% at 0% 0%, #f8c94a 0%, #ef7d35 25%, #dd4550 50%, #93709f 75%, #4a90e8 100%) fixed;
   }
 
   /* NAV */
@@ -164,6 +168,8 @@
     position: relative;
     overflow: hidden;
   }
+
+  .hero-bg { display: none; }
 
   /* Organic blurred gradient blob */
   .hero-bg {

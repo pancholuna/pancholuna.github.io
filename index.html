@@ -9,9 +9,12 @@
 <meta property="og:title" content="Francisco Calleja Luna — Portafolio">
 <meta property="og:description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
 <meta property="og:url" content="https://pancholuna.github.io">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://pancholuna.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pancholuna.github.io/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -38,6 +41,10 @@
   .fcl-work-item img{transition:transform .25s}
   .fcl-work-item:hover img,.fcl-work-item:focus-visible img{transform:scale(1.08)}
   .fcl-work-label{position:absolute;top:.35rem;left:.35rem;background:rgba(0,0,0,.75);color:#fff;font-family:'Dela Gothic One',sans-serif;font-size:.52rem;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .45rem;border-radius:3px}
+  .fcl-skills-grid{display:grid;grid-template-columns:1fr;gap:0 3rem}
+  @media (min-width:640px){.fcl-skills-grid{grid-template-columns:1fr 1fr}}
+  .fcl-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+  .fcl-chip{display:inline-block;border:1px solid #000;border-radius:4px;padding:.3rem .8rem;font-size:.72rem}
   @media (min-width:769px){
     .fcl-nav-desktop{display:flex !important}
     .fcl-nav-toggle{display:none !important}
@@ -133,11 +140,12 @@
   </section>
 
   <section style="padding:clamp(1.5rem,5vw,2.5rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));row-gap:1.5rem">
-      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">10+</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Años de experiencia</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Years of experience</div></div>
-      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">7</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Organizaciones</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Organizations</div></div>
-      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">4</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Idiomas</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Languages</div></div>
-      <div style="border-left:1px solid #000;border-right:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">+50%</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Crecimiento audiencia</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Audience growth</div></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,160px));gap:1.25rem">
+      <div style="border:1px solid #000;border-radius:4px;padding:.85rem 1.15rem;box-shadow:5px 5px 0 0 #000"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">10+</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Años de experiencia</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Years of experience</div></div>
+      <div style="border:1px solid #000;border-radius:4px;padding:.85rem 1.15rem;box-shadow:5px 5px 0 0 #000"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">7</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Organizaciones</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Organizations</div></div>
+      <div style="border:1px solid #000;border-radius:4px;padding:.85rem 1.15rem;box-shadow:5px 5px 0 0 #000"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">4</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Idiomas</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Languages</div></div>
+      <div style="border:1px solid #000;border-radius:4px;padding:.85rem 1.15rem;box-shadow:5px 5px 0 0 #000"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">+50%</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Crecimiento audiencia</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Audience growth</div></div>
+      <div style="border:1px solid #000;border-radius:4px;padding:.85rem 1.15rem;box-shadow:5px 5px 0 0 #000"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">+15</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Plataformas y herramientas</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Platforms &amp; tools</div></div>
     </div>
   </section>
 
@@ -147,75 +155,75 @@
 
     <div style="display:flex;flex-direction:column">
       <div style="border-top:1px solid #000;padding:1.5rem 0">
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+        <div style="margin-bottom:.4rem">
           <span style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Content Marketing Manager</span>
-          <span style="font-size:.78rem;font-weight:700">2024–2026</span>
         </div>
-        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Universidad Iberoamericana CDMX</div>
-        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.82rem">
-          <span><span style="font-family:Dela Gothic One,sans-serif">+150</span> <span data-es="1" data-disp="inline">piezas producidas</span><span data-en="1" data-disp="inline" style="display:none">pieces produced</span></span>
-          <span>TikTok · Instagram · Salesforce</span>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Universidad Iberoamericana CDMX // 2024–2026</div>
+        <div style="margin-bottom:1rem;font-size:.82rem">
+          <span data-es="1" data-disp="inline"><span style="font-family:Dela Gothic One,sans-serif">+150</span> piezas producidas // <span style="font-family:Dela Gothic One,sans-serif">+15%</span> crecimiento engagement // <span style="font-family:Dela Gothic One,sans-serif">7</span> alianzas estratégicas // <span style="font-family:Dela Gothic One,sans-serif">Ibero Rewards</span>, producción evento</span>
+          <span data-en="1" data-disp="inline" style="display:none"><span style="font-family:Dela Gothic One,sans-serif">+150</span> pieces produced // <span style="font-family:Dela Gothic One,sans-serif">+15%</span> engagement growth // <span style="font-family:Dela Gothic One,sans-serif">7</span> strategic partnerships // <span style="font-family:Dela Gothic One,sans-serif">Ibero Rewards</span>, event production</span>
         </div>
         <div data-es="1" data-disp="block" style="font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Trabajo destacado</div><div data-en="1" data-disp="block" style="display:none;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Selected work</div><div style="display:flex;gap:.5rem;flex-wrap:wrap">
         
-          <a href="https://www.instagram.com/p/DXsX3-dDUu0/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ibero/ibero1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Reel de Instagram — Vida Ibero"><span class="fcl-work-label">REEL</span></a>
-          <a href="https://www.tiktok.com/@esteban_said/video/7439156692694191415" target="_blank" rel="noopener" aria-label="Ver video en TikTok — colaboración Vida Ibero" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ibero/ibero2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="TikTok — colaboración para Vida Ibero"><span class="fcl-work-label">TIKTOK</span></a>
-          <a href="https://www.youtube.com/watch?v=dtALF6OxGTw" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Vida Ibero" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ibero/ibero3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Vida Ibero"><span class="fcl-work-label">VIDEO</span></a>
-          <a href="https://www.instagram.com/p/DAzjbccs2sB/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ibero/ibero6.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Reel de Instagram — Vida Ibero"><span class="fcl-work-label">REEL</span></a>
+          <a href="https://www.instagram.com/p/DXsX3-dDUu0/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ibero/ibero1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Reel de Instagram — Vida Ibero"><span class="fcl-work-label">REEL</span></a>
+          <a href="https://www.tiktok.com/@esteban_said/video/7439156692694191415" target="_blank" rel="noopener" aria-label="Ver video en TikTok — colaboración Vida Ibero" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ibero/ibero2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="TikTok — colaboración para Vida Ibero"><span class="fcl-work-label">TIKTOK</span></a>
+          <a href="https://www.youtube.com/watch?v=dtALF6OxGTw" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Vida Ibero" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ibero/ibero3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Vida Ibero"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://www.instagram.com/p/DAzjbccs2sB/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ibero/ibero6.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Reel de Instagram — Vida Ibero"><span class="fcl-work-label">REEL</span></a>
         </div>
       </div>
 
       <div style="border-top:1px solid #000;padding:1.5rem 0">
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+        <div style="margin-bottom:.4rem">
           <span style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Social Media Manager</span>
-          <span style="font-size:.78rem;font-weight:700">2018–2024</span>
         </div>
-        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Casa del Lago UNAM</div>
-        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.82rem">
-          <span><span style="font-family:Dela Gothic One,sans-serif">+50%</span> <span data-es="1" data-disp="inline">crecimiento en 6 años</span><span data-en="1" data-disp="inline" style="display:none">growth over 6 years</span></span>
-          <span>Facebook · X/Twitter</span>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Casa del Lago UNAM // 2018–2024</div>
+        <div style="margin-bottom:1rem;font-size:.82rem">
+          <span data-es="1" data-disp="inline"><span style="font-family:Dela Gothic One,sans-serif">+50%</span> crecimiento en 6 años // <span style="font-family:Dela Gothic One,sans-serif">+30%</span> mejora alcance de campañas // <span style="font-family:Dela Gothic One,sans-serif">9</span> curadurías de cine</span>
+          <span data-en="1" data-disp="inline" style="display:none"><span style="font-family:Dela Gothic One,sans-serif">+50%</span> audience growth over 6 years // <span style="font-family:Dela Gothic One,sans-serif">+30%</span> campaign reach improvement // <span style="font-family:Dela Gothic One,sans-serif">9</span> film curations</span>
         </div>
         <div data-es="1" data-disp="block" style="font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Trabajo destacado</div><div data-en="1" data-disp="block" style="display:none;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Selected work</div><div style="display:flex;gap:.5rem;flex-wrap:wrap">
         
-          <a href="https://casadellago.unam.mx/nuevo/arte-contemporaneo-a-c" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Arte contemporáneo" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — Arte contemporáneo"><span class="fcl-work-label">WEB</span></a>
-          <a href="https://casadellago.unam.mx/nuevo/ciclo-cyberpunk" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Ciclo Cyberpunk" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — Ciclo Cyberpunk"><span class="fcl-work-label">WEB</span></a>
-          <a href="https://casadellago.unam.mx/nuevo/ciclo-raices-somos" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Ciclo Raíces Somos" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — Ciclo Raíces Somos"><span class="fcl-work-label">WEB</span></a>
-          <a href="https://casadellago.unam.mx/nuevo/lgbt-mexico" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — LGBT México" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago4.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — LGBT México"><span class="fcl-work-label">WEB</span></a>
+          <a href="https://casadellago.unam.mx/nuevo/arte-contemporaneo-a-c" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Arte contemporáneo" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — Arte contemporáneo"><span class="fcl-work-label">WEB</span></a>
+          <a href="https://casadellago.unam.mx/nuevo/ciclo-cyberpunk" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Ciclo Cyberpunk" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — Ciclo Cyberpunk"><span class="fcl-work-label">WEB</span></a>
+          <a href="https://casadellago.unam.mx/nuevo/ciclo-raices-somos" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Ciclo Raíces Somos" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — Ciclo Raíces Somos"><span class="fcl-work-label">WEB</span></a>
+          <a href="https://casadellago.unam.mx/nuevo/lgbt-mexico" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — LGBT México" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/casa%20del%20lago/casadellago4.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Casa del Lago UNAM — LGBT México"><span class="fcl-work-label">WEB</span></a>
         </div>
       </div>
 
       <div style="border-top:1px solid #000;padding:1.5rem 0">
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+        <div style="margin-bottom:.4rem">
           <span style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Social Media Manager</span>
-          <span style="font-size:.78rem;font-weight:700">2016–2018</span>
         </div>
-        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Festival Internacional de Cine de Morelia — FICM</div>
-        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.82rem">
-          <span><span style="font-family:Dela Gothic One,sans-serif">+80%</span> <span data-es="1" data-disp="inline">alcance combinado en 5 plataformas</span><span data-en="1" data-disp="inline" style="display:none">combined reach across 5 platforms</span></span>
-          <span>YouTube · Google+</span>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Festival Internacional de Cine de Morelia (FICM) // 2014–2018</div>
+        <div style="margin-bottom:1rem;font-size:.82rem">
+          <span data-es="1" data-disp="inline"><span style="font-family:Dela Gothic One,sans-serif">+80%</span> alcance combinado en 5 plataformas // Reestructuración canal de <span style="font-family:Dela Gothic One,sans-serif">YouTube</span></span>
+          <span data-en="1" data-disp="inline" style="display:none"><span style="font-family:Dela Gothic One,sans-serif">+80%</span> combined reach across 5 platforms // <span style="font-family:Dela Gothic One,sans-serif">YouTube</span> channel restructuring</span>
         </div>
         <div data-es="1" data-disp="block" style="font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Trabajo destacado</div><div data-en="1" data-disp="block" style="display:none;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Selected work</div><div style="display:flex;gap:.5rem;flex-wrap:wrap">
         
-          <a href="https://www.youtube.com/watch?v=4qZxqHOOU4k" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ficm/ficm1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
-          <a href="https://www.youtube.com/watch?v=Xd-0YSNoVGE" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ficm/ficm2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
-          <a href="https://www.youtube.com/watch?v=uUhuSZUzPCE" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ficm/ficm3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
-          <a href="https://www.youtube.com/watch?v=Mbidtzrg_RU" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/ficm/ficm4.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://www.youtube.com/watch?v=4qZxqHOOU4k" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ficm/ficm1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://www.youtube.com/watch?v=Xd-0YSNoVGE" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ficm/ficm2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://www.youtube.com/watch?v=uUhuSZUzPCE" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ficm/ficm3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://www.youtube.com/watch?v=Mbidtzrg_RU" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/ficm/ficm4.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Festival Internacional de Cine de Morelia"><span class="fcl-work-label">VIDEO</span></a>
         </div>
       </div>
 
-      <div style="border-top:1px solid #000;border-bottom:1px solid #000;padding:1.5rem 0">
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+      <div style="border-top:1px solid #000;padding:1.5rem 0">
+        <div style="margin-bottom:.4rem">
           <span data-es="1" data-disp="inline" style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Asistente de Dirección</span>
           <span data-en="1" data-disp="inline" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Director's Assistant</span>
-          <span style="font-size:.78rem;font-weight:700">2012–2014</span>
         </div>
-        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Cinema 23 — Premios Fénix</div>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Cinema 23 — Premios Fénix // 2012–2014</div>
+        <div style="margin-bottom:1rem;font-size:.82rem">
+          <span data-es="1" data-disp="inline">Investigación sobre <span style="font-family:Dela Gothic One,sans-serif">cine iberoamericano</span> // Producción de <span style="font-family:Dela Gothic One,sans-serif">contenido multiformato</span></span>
+          <span data-en="1" data-disp="inline" style="display:none"><span style="font-family:Dela Gothic One,sans-serif">Ibero-American film</span> research // <span style="font-family:Dela Gothic One,sans-serif">Multi-format content</span> production</span>
+        </div>
         <div data-es="1" data-disp="block" style="font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Trabajo destacado</div><div data-en="1" data-disp="block" style="display:none;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem">Selected work</div><div style="display:flex;gap:.5rem;flex-wrap:wrap">
         
-          <a href="https://www.youtube.com/watch?v=uPNtxxuWMfs" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Cinema 23 Premios Fénix" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/cinema23/cinema1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Cinema 23 Premios Fénix"><span class="fcl-work-label">VIDEO</span></a>
-          <a href="https://cinema23.com/cuaderno/errancias/" target="_blank" rel="noopener" aria-label="Leer artículo en Cinema 23 — Errancias" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/cinema23/cinema2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Artículo en Cinema 23 — Errancias"><span class="fcl-work-label">WEB</span></a>
-          <a href="https://cinema23.com/cuaderno/luis-ospina-todo-comenzo-por-el-archivo/" target="_blank" rel="noopener" aria-label="Leer artículo en Cinema 23 — Luis Ospina" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/cinema23/cinema3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Artículo en Cinema 23 — Luis Ospina: Todo comenzó por el archivo"><span class="fcl-work-label">WEB</span></a>
-          <a href="https://www.youtube.com/watch?v=KF03GT8klLw" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Cinema 23 Premios Fénix" class="fcl-work-item" style="width:clamp(100px,20vw,150px);aspect-ratio:16/9"><img src="img/cinema23/cinema4.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Cinema 23 Premios Fénix"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://www.youtube.com/watch?v=uPNtxxuWMfs" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Cinema 23 Premios Fénix" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/cinema23/cinema1.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Cinema 23 Premios Fénix"><span class="fcl-work-label">VIDEO</span></a>
+          <a href="https://cinema23.com/cuaderno/errancias/" target="_blank" rel="noopener" aria-label="Leer artículo en Cinema 23 — Errancias" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/cinema23/cinema2.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Artículo en Cinema 23 — Errancias"><span class="fcl-work-label">WEB</span></a>
+          <a href="https://cinema23.com/cuaderno/luis-ospina-todo-comenzo-por-el-archivo/" target="_blank" rel="noopener" aria-label="Leer artículo en Cinema 23 — Luis Ospina" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/cinema23/cinema3.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Artículo en Cinema 23 — Luis Ospina: Todo comenzó por el archivo"><span class="fcl-work-label">WEB</span></a>
+          <a href="https://www.youtube.com/watch?v=KF03GT8klLw" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Cinema 23 Premios Fénix" class="fcl-work-item" style="width:clamp(160px,28vw,230px);aspect-ratio:16/9"><img src="img/cinema23/cinema4.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Video de YouTube — Cinema 23 Premios Fénix"><span class="fcl-work-label">VIDEO</span></a>
         </div>
       </div>
     </div>
@@ -224,11 +232,30 @@
   <section id="habilidades" style="padding:clamp(2rem,6vw,3rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
     <div data-es="1" data-disp="block" style="font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3);text-transform:uppercase">Habilidades</div>
     <div data-en="1" data-disp="block" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3);text-transform:uppercase">Skills</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));row-gap:1.5rem">
-      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Plataformas</div><div style="font-size:.78rem;line-height:1.8">TikTok · Instagram · Facebook · X · YouTube</div></div>
-      <div style="border-left:1px solid #000;padding:0 1.5rem"><div data-es="1" data-disp="block" style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Especialización</div><div data-en="1" data-disp="block" style="display:none;font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Expertise</div><div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8">Contenido · Comunidades · Audiovisual · Alianzas</div><div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8">Content · Community · Audiovisual · Partnerships</div></div>
-      <div style="border-left:1px solid #000;padding:0 1.5rem"><div data-es="1" data-disp="block" style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Idiomas</div><div data-en="1" data-disp="block" style="display:none;font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Languages</div><div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8">Español · Inglés · Portugués · Francés</div><div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8">Spanish · English · Portuguese · French</div></div>
-      <div style="border-left:1px solid #000;border-right:1px solid #000;padding:0 1.5rem"><div style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Software</div><div style="font-size:.78rem;line-height:1.8">CapCut · Adobe CC · Office · Salesforce</div></div>
+    <div class="fcl-skills-grid">
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Estrategia &amp; Contenido</div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Strategy &amp; Content</div>
+        <div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">Estrategia de contenido</span><span class="fcl-chip">Content calendar</span><span class="fcl-chip">Content pillars</span><span class="fcl-chip">Storytelling de marca</span><span class="fcl-chip">Copywriting</span><span class="fcl-chip">Marketing de contenidos</span><span class="fcl-chip">Growth marketing</span></div></div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">Content strategy</span><span class="fcl-chip">Content calendar</span><span class="fcl-chip">Content pillars</span><span class="fcl-chip">Brand storytelling</span><span class="fcl-chip">Copywriting</span><span class="fcl-chip">Content marketing</span><span class="fcl-chip">Growth marketing</span></div></div>
+      </div>
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Plataformas y Herramientas</div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Platforms &amp; Tools</div>
+        <div style="font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">TikTok</span><span class="fcl-chip">Instagram</span><span class="fcl-chip">Facebook</span><span class="fcl-chip">X</span><span class="fcl-chip">YouTube</span><span class="fcl-chip">Meta Business Suite</span><span class="fcl-chip">Meta Ads Manager</span><span class="fcl-chip">TikTok Ads Manager</span><span class="fcl-chip">Google Analytics (GA4)</span><span class="fcl-chip">Google Ads</span><span class="fcl-chip">Hootsuite / Sprout Social / Later</span><span class="fcl-chip">CapCut</span><span class="fcl-chip">Adobe Creative Cloud</span><span class="fcl-chip">Salesforce CRM</span><span class="fcl-chip">Keynote</span><span class="fcl-chip">Microsoft Office</span></div></div>
+      </div>
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Gestión y Resultados</div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Management &amp; Results</div>
+        <div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">KPIs</span><span class="fcl-chip">Engagement rate</span><span class="fcl-chip">Alcance</span><span class="fcl-chip">Crecimiento de audiencia</span><span class="fcl-chip">ROI</span><span class="fcl-chip">Gestión de presupuesto</span><span class="fcl-chip">Gestión de proveedores</span><span class="fcl-chip">Producción de eventos</span><span class="fcl-chip">Alianzas estratégicas</span><span class="fcl-chip">Liderazgo de equipos multidisciplinarios</span><span class="fcl-chip">Coordinación de proyectos</span></div></div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">KPIs</span><span class="fcl-chip">Engagement rate</span><span class="fcl-chip">Reach</span><span class="fcl-chip">Audience growth</span><span class="fcl-chip">ROI</span><span class="fcl-chip">Budget management</span><span class="fcl-chip">Vendor management</span><span class="fcl-chip">Event production</span><span class="fcl-chip">Strategic partnerships</span><span class="fcl-chip">Cross-functional team leadership</span><span class="fcl-chip">Project coordination</span></div></div>
+      </div>
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Idiomas</div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Languages</div>
+        <div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">Español (nativo)</span><span class="fcl-chip">Inglés (avanzado)</span><span class="fcl-chip">Portugués (CELPE-BRAS)</span><span class="fcl-chip">Francés (básico)</span></div></div>
+        <div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8"><div class="fcl-chips"><span class="fcl-chip">Spanish (native)</span><span class="fcl-chip">English (advanced)</span><span class="fcl-chip">Portuguese (CELPE-BRAS)</span><span class="fcl-chip">French (basic)</span></div></div>
+      </div>
     </div>
   </section>
 
@@ -239,27 +266,27 @@
       <div style="border-top:1px solid #000;padding:1.1rem 0">
         <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Licenciatura en Ciencias de la Comunicación</div>
         <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">B.A. in Communication Sciences</div>
-        <div style="font-size:.82rem">UNAM, Ciudad Universitaria · 2008–2013</div>
+        <div style="font-size:.82rem">UNAM, Ciudad Universitaria // 2008–2013</div>
       </div>
       <div style="border-top:1px solid #000;padding:1.1rem 0">
         <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Diplomado en Psicología y Liderazgo Organizacional</div>
         <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Diploma in Organizational Psychology & Leadership</div>
-        <div style="font-size:.82rem">Universidad Iberoamericana CDMX · 2025–2026</div>
+        <div style="font-size:.82rem">Universidad Iberoamericana CDMX // 2025–2026</div>
       </div>
       <div style="border-top:1px solid #000;padding:1.1rem 0">
         <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Diplomado en Diseño Gráfico y Estrategias Multimedia</div>
         <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Diploma in Graphic Design & Multimedia Strategies</div>
-        <div style="font-size:.82rem">Centro de Arte, Diseño y Música · 2012–2013</div>
+        <div style="font-size:.82rem">Centro de Arte, Diseño y Música // 2012–2013</div>
       </div>
       <div style="border-top:1px solid #000;padding:1.1rem 0">
         <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Capacitación y Certificación Google Ads</div>
         <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Google Ads Certification</div>
-        <div style="font-size:.82rem">Cultura UNAM · 2019</div>
+        <div style="font-size:.82rem">Cultura UNAM // 2019</div>
       </div>
-      <div style="border-top:1px solid #000;border-bottom:1px solid #000;padding:1.1rem 0">
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
         <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Certificación "The Fundamentals of Digital Marketing"</div>
         <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Certification "The Fundamentals of Digital Marketing"</div>
-        <div style="font-size:.82rem">Google Skillshop · 2019</div>
+        <div style="font-size:.82rem">Google Skillshop // 2019</div>
       </div>
     </div>
   </section>

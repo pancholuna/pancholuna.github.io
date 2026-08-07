@@ -1,1429 +1,282 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Francisco Calleja Luna — Portafolio</title>
-<meta name="description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Francisco Calleja Luna — Portafolio">
-<meta property="og:description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
-<meta property="og:url" content="https://pancholuna.github.io">
-<meta name="twitter:card" content="summary">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<script>document.documentElement.classList.add('js');</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  @font-face {
-    font-family: 'TAN Nimbus';
-    src: url('fonts/TAN-NIMBUS.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Sifonn';
-    src: url('fonts/Sifonn-Pro.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #d9d9d9;
-    --bg2: #cbcbcb;
-    --bg3: #c0c0c0;
-    --text: #000000;
-    --text-muted: #3d3b38;
-    --text-dim: #7a7773;
-    --accent1: #ed5b72;
-    --accent2: #f5873b;
-    --accent3: #f9a01b;
-    --accent: #ed5b72;
-    --border: rgba(0,0,0,0.12);
-    --border-strong: rgba(0,0,0,0.22);
-    --font-display: 'TAN Nimbus', 'Georgia', serif;
-    --font-body: 'Sifonn', 'Inter', system-ui, sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: radial-gradient(140% 140% at 0% 0%, #ffe046 0%, #e26a00 50%, #1ebda5 100%) fixed;
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  body.en {
-    background: radial-gradient(140% 140% at 0% 0%, #f8c94a 0%, #ef7d35 25%, #dd4550 50%, #93709f 75%, #4a90e8 100%) fixed;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 2.5rem;
-    background: rgba(217,217,217,0.82);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-  }
-
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.75rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--text); }
-
-  /* Hamburguesa — solo visible en móvil */
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .nav-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--text);
-    border-radius: 2px;
-    transition: transform 0.25s, opacity 0.2s;
-  }
-
-  nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
-  nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .lang-toggle {
-    display: flex;
-    background: rgba(0,0,0,0.08);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    overflow: hidden;
-  }
-
-  .lang-btn {
-    padding: 0.3rem 0.75rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    background: none;
-    border: none;
-    color: var(--text-dim);
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: var(--font-body);
-  }
-
-  .lang-btn.active {
-    background: var(--accent1);
-    color: #fff;
-  }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 8rem 2.5rem 4.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bg { display: none; }
-
-  /* Organic blurred gradient blob */
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .hero-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    mix-blend-mode: multiply;
-    opacity: 0.72;
-  }
-
-  .hero-blob-1 {
-    width: 55vw;
-    height: 55vw;
-    top: -12%;
-    right: -8%;
-    background: #ed5b72;
-  }
-
-  .hero-blob-2 {
-    width: 42vw;
-    height: 42vw;
-    top: 5%;
-    right: 18%;
-    background: #f5873b;
-  }
-
-  .hero-blob-3 {
-    width: 36vw;
-    height: 36vw;
-    top: -5%;
-    right: 35%;
-    background: #f9a01b;
-  }
-
-  .hero-blob-4 {
-    width: 28vw;
-    height: 28vw;
-    bottom: 15%;
-    right: 5%;
-    background: #ed5b72;
-    opacity: 0.38;
-  }
-
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.75rem, 9.5vw, 8.5rem);
-    line-height: 1.10;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 1.75rem;
-    position: relative;
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
-
-  .hero-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 3rem;
-    position: relative;
-  }
-
-  .hero-pill {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.9rem;
-    border-radius: 20px;
-    border: 1px solid var(--border-strong);
-    color: var(--text);
-    background: rgba(255,255,255,0.35);
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.75rem;
-    background: var(--text);
-    color: var(--bg);
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.15s;
-    font-family: var(--font-body);
-  }
-
-  .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
-  .btn-primary:active { transform: translateY(0); }
-
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.75rem;
-    background: rgba(255,255,255,0.3);
-    color: var(--text);
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    border: 1px solid var(--border-strong);
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
-    font-family: var(--font-body);
-  }
-
-  .btn-ghost:hover { background: rgba(255,255,255,0.55); }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    right: 2.5rem;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text);
-    writing-mode: vertical-rl;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .hero-scroll::before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 40px;
-    background: var(--text-dim);
-  }
-
-  /* SECTIONS */
-  .section-wrap {
-    padding: 5rem 2.5rem;
-    border-top: 1px solid var(--border);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    color: var(--text);
-    margin-bottom: 3rem;
-  }
-
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    font-size: 0.95rem;
-    color: var(--text);
-    line-height: 1.8;
-  }
-
-  /* STATS — modern card style */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .stat-item {
-    background: rgba(255,255,255,0.45);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem 1.25rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-
-  .stat-item:hover { transform: translateY(-2px); }
-
-  .stat-item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent1), var(--accent3));
-  }
-
-  .stat-number {
-    font-family: var(--font-display);
-    font-size: 2.6rem;
-    color: var(--text);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--text);
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-  }
-
-  /* EXPERIENCE TIMELINE */
-  .timeline {
-    position: relative;
-    padding-left: 2rem;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-    bottom: 0;
-    width: 1px;
-    background: var(--border-strong);
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 3.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2rem;
-    top: 0.5rem;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 1.5px solid var(--text-dim);
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .timeline-item:hover::before {
-    border-color: var(--accent1);
-    background: var(--accent1);
-  }
-
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 0.25rem;
-    flex-wrap: wrap;
-  }
-
-  .job-title {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text);
-  }
-
-  .job-period {
-    font-size: 0.72rem;
-    color: var(--text);
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
-
-  .job-company {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    color: var(--text);
-    margin-bottom: 0.75rem;
-  }
-
-  .job-desc {
-    font-size: 0.88rem;
-    color: var(--text);
-    line-height: 1.7;
-  }
-
-  .job-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.75rem;
-  }
-
-  .job-stat {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin: 1rem 0 0.25rem;
-  }
-
-  .job-stat-number {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    color: var(--text);
-    line-height: 1;
-  }
-
-  .job-stat-label {
-    font-size: 0.78rem;
-    color: var(--text);
-    letter-spacing: 0.02em;
-  }
-
-  .tag {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    padding: 0.2rem 0.65rem;
-    border: 1px solid var(--border-strong);
-    border-radius: 20px;
-    color: var(--text);
-    background: rgba(255,255,255,0.3);
-  }
-
-  /* WORK GALLERY — portafolio por experiencia */
-  .work-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.1rem;
-  }
-
-  .gallery-item {
-    position: relative;
-    display: block;
-    width: clamp(132px, 24vw, 176px);
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--border-strong);
-    padding: 0;
-    cursor: pointer;
-    background: var(--bg3);
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .gallery-item:hover,
-  .gallery-item:focus-visible {
-    transform: translateY(-3px);
-    border-color: var(--accent1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.16);
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.35s ease;
-  }
-
-  .gallery-item:hover img { transform: scale(1.05); }
-
-  /* Overlay sutil para legibilidad de los badges */
-  .gallery-item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, transparent 38%, transparent 62%, rgba(0,0,0,0.28) 100%);
-    opacity: 0;
-    transition: opacity 0.25s;
-    pointer-events: none;
-  }
-
-  .gallery-item:hover::after,
-  .gallery-item:focus-visible::after { opacity: 1; }
-
-  /* Pill esquina: tipo de pieza (Reel / imagen) */
-  .gallery-badge {
-    position: absolute;
-    top: 0.45rem;
-    left: 0.45rem;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.18rem 0.5rem;
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #fff;
-    background: rgba(26,24,22,0.62);
-    backdrop-filter: blur(4px);
-    border-radius: 20px;
-  }
-
-  .gallery-badge svg { width: 0.7rem; height: 0.7rem; display: block; }
-
-  /* Botón play centrado para piezas de video */
-  .gallery-play {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    z-index: 2;
-    width: 2.6rem; height: 2.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent1), var(--accent2));
-    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-    opacity: 0;
-    transition: opacity 0.25s, transform 0.25s;
-    pointer-events: none;
-  }
-
-  .gallery-item:hover .gallery-play,
-  .gallery-item:focus-visible .gallery-play {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .gallery-play svg { width: 1.1rem; height: 1.1rem; fill: #fff; margin-left: 2px; }
-
-  .gallery-label {
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-top: 1.1rem;
-    margin-bottom: -0.2rem;
-  }
-
-  /* LIGHTBOX — visor de imágenes */
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    background: rgba(20,18,16,0.88);
-    backdrop-filter: blur(8px);
-  }
-
-  .lightbox.open {
-    display: flex;
-    animation: lb-fade 0.2s ease;
-  }
-
-  @keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
-
-  .lightbox img {
-    max-width: min(92vw, 1100px);
-    max-height: 86vh;
-    border-radius: 8px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 1.25rem; right: 1.5rem;
-    width: 2.6rem; height: 2.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    line-height: 1;
-    color: #fff;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-family: var(--font-body);
-  }
-
-  .lightbox-close:hover { background: rgba(255,255,255,0.25); }
-
-  .lightbox-caption {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 0; right: 0;
-    text-align: center;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    color: rgba(255,255,255,0.85);
-  }
-
-  /* SKILLS */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .skill-card {
-    background: rgba(255,255,255,0.4);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .skill-card:hover {
-    border-color: var(--accent1);
-    transform: translateY(-2px);
-  }
-
-  .skill-card-label {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-bottom: 0.85rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .skill-list {
-    list-style: none;
-  }
-
-  .skill-list li {
-    font-size: 0.85rem;
-    color: var(--text);
-    padding: 0.3rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .skill-list li:last-child { border-bottom: none; }
-
-  /* EDUCATION */
-  .edu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .edu-card {
-    background: rgba(255,255,255,0.4);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    border-left: 3px solid var(--accent2);
-  }
-
-  .edu-degree {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-bottom: 0.35rem;
-    line-height: 1.4;
-  }
-
-  .edu-school {
-    font-size: 0.85rem;
-    color: var(--text);
-  }
-
-  .edu-year {
-    font-size: 0.7rem;
-    color: var(--text);
-    margin-top: 0.3rem;
-  }
-
-  /* CONTACT */
-  .contact-section {
-    text-align: center;
-    padding: 6rem 2.5rem;
-    border-top: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .contact-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(70px);
-    mix-blend-mode: multiply;
-    opacity: 0.45;
-    pointer-events: none;
-  }
-
-  .contact-blob-1 {
-    width: 40vw; height: 40vw;
-    bottom: -10%; left: -5%;
-    background: #f9a01b;
-  }
-
-  .contact-blob-2 {
-    width: 30vw; height: 30vw;
-    bottom: -5%; left: 20%;
-    background: #f5873b;
-  }
-
-  .contact-title {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--text);
-    margin-bottom: 2.5rem;
-    position: relative;
-  }
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  footer {
-    padding: 1.5rem 2.5rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer p {
-    font-size: 0.72rem;
-    color: var(--text);
-  }
-
-  .icon-dl::before { content: '↓ '; }
-
-  /* SCROLL REVEAL — condicionado a .js; sin JS todo queda visible */
-  .js .timeline-item,
-  .js .stat-item,
-  .js .skill-card,
-  .js .edu-card {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .js .timeline-item.in-view,
-  .js .stat-item.in-view,
-  .js .skill-card.in-view,
-  .js .edu-card.in-view {
-    opacity: 1;
-    transform: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .js .timeline-item,
-    .js .stat-item,
-    .js .skill-card,
-    .js .edu-card {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-  }
-
-  /* LANG VISIBILITY */
-  [data-lang="en"] { display: none; }
-  body.en [data-lang="en"] { display: revert; }
-  body.en [data-lang="es"] { display: none; }
-
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--accent1);
-    outline-offset: 3px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; filter: none !important; }
-  }
-
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-toggle { display: flex; }
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      gap: 0;
-      padding: 0.25rem 1.25rem 0.75rem;
-      background: rgba(217,217,217,0.97);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-8px);
-      transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
-    }
-    nav.nav-open .nav-links {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .nav-links li { width: 100%; border-bottom: 1px solid var(--border); }
-    .nav-links li:last-child { border-bottom: none; }
-    /* Anchors a ancho completo, respetando el toggle de idioma */
-    .nav-links a[data-lang="es"] { display: block; padding: 0.85rem 0; font-size: 0.82rem; }
-    body.en .nav-links a[data-lang="es"] { display: none; }
-    body.en .nav-links a[data-lang="en"] { display: block; padding: 0.85rem 0; font-size: 0.82rem; }
-    .hero { padding: 6rem 1.25rem 3rem; }
-    .section-wrap { padding: 3.5rem 1.25rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .contact-section { padding: 4rem 1.25rem; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-    .hero-scroll { display: none; }
-    .hero-blob-1 { width: 90vw; height: 90vw; }
-    .hero-blob-2 { width: 70vw; height: 70vw; }
-    .hero-blob-3 { width: 60vw; height: 60vw; right: 10%; }
-    .hero-blob-4 { display: none; }
-  }
-
-  /* Pantallas muy chicas: los dos botones del hero no caben lado a lado */
-  @media (max-width: 360px) {
-    .hero-cta { flex-direction: column; align-items: stretch; }
-    .hero-cta a { width: 100%; justify-content: center; }
-  }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="#inicio" class="nav-logo">FCL</a>
-  <div class="nav-right">
-    <ul class="nav-links" id="nav-menu">
-      <li><a href="#sobre-mi" data-lang="es">Perfil</a><a href="#sobre-mi" data-lang="en">Profile</a></li>
-      <li><a href="#experiencia" data-lang="es">Experiencia</a><a href="#experiencia" data-lang="en">Background</a></li>
-      <li><a href="#habilidades" data-lang="es">Habilidades</a><a href="#habilidades" data-lang="en">Skills</a></li>
-      <li><a href="#formacion" data-lang="es">Educación</a><a href="#formacion" data-lang="en">Education</a></li>
-      <li><a href="#contacto" data-lang="es">Contacto</a><a href="#contacto" data-lang="en">Contact</a></li>
-    </ul>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('es')" aria-pressed="true">ES</button>
-      <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
-    </div>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="inicio" style="border:none; max-width:100%;">
-  <div class="hero-bg">
-    <div class="hero-blob hero-blob-1"></div>
-    <div class="hero-blob hero-blob-2"></div>
-    <div class="hero-blob hero-blob-3"></div>
-    <div class="hero-blob hero-blob-4"></div>
-  </div>
-
-  <h1>Francisco<br>Calleja<br><em style="font-style:italic;">Luna</em></h1>
-
-  <div class="hero-pills">
-    <span class="hero-pill" data-lang="es">Estrategia Digital</span>
-    <span class="hero-pill" data-lang="es">Comunicación</span>
-    <span class="hero-pill" data-lang="es">Contenido</span>
-    <span class="hero-pill" data-lang="es">Alianzas Estratégicas</span>
-    <span class="hero-pill" data-lang="es">Producción de Experiencias</span>
-    <span class="hero-pill" data-lang="en">Digital Strategy</span>
-    <span class="hero-pill" data-lang="en">Communications</span>
-    <span class="hero-pill" data-lang="en">Content</span>
-    <span class="hero-pill" data-lang="en">Strategic Partnerships</span>
-    <span class="hero-pill" data-lang="en">Experience Production</span>
-  </div>
-
-  <div class="hero-cta">
-    <a href="PacoCL_CV_ES.pdf" download class="btn-primary" data-lang="es">
-      <span class="icon-dl"></span>Descargar CV
-    </a>
-    <a href="PacoCL_CV_EN.pdf" download class="btn-primary" data-lang="en">
-      <span class="icon-dl"></span>Download CV
-    </a>
-    <a href="#contacto" class="btn-ghost" data-lang="es">Hablemos →</a>
-    <a href="#contacto" class="btn-ghost" data-lang="en">Let's talk →</a>
-  </div>
-
-  <div class="hero-scroll">Scroll</div>
-</section>
-
-<!-- ABOUT -->
-<section class="section-wrap" id="sobre-mi">
-  <div class="section-label" data-lang="es">Perfil</div>
-  <div class="section-label" data-lang="en">Profile</div>
-
-  <div class="about-grid">
-    <div class="about-text">
-      <p data-lang="es">Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca. Track record de crecimiento de audiencia de +50% y coordinación de equipos y proveedores para campañas multiplataforma (TikTok, Instagram, Facebook, X, YouTube).</p>
-      <p data-lang="en">Content & Social Media Manager with 10+ years driving digital strategy from concept to execution: audiovisual production, community management, event marketing, and brand partnerships. Track record of 50%+ audience growth and full-cycle coordination of teams and vendors for multi-platform campaigns (TikTok, Instagram, Facebook, X, YouTube).</p>
-    </div>
-
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">10+</div>
-        <div class="stat-label" data-lang="es">Años de experiencia</div>
-        <div class="stat-label" data-lang="en">Years of experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5+</div>
-        <div class="stat-label" data-lang="es">Plataformas dominadas</div>
-        <div class="stat-label" data-lang="en">Platforms mastered</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">4</div>
-        <div class="stat-label" data-lang="es">Idiomas</div>
-        <div class="stat-label" data-lang="en">Languages</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">7</div>
-        <div class="stat-label" data-lang="es">Organizaciones</div>
-        <div class="stat-label" data-lang="en">Organizations</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="section-wrap" id="experiencia">
-  <div class="section-label" data-lang="es">Trayectoria</div>
-  <div class="section-label" data-lang="en">Career</div>
-  <h2 class="section-title" data-lang="es">Portafolio</h2>
-  <h2 class="section-title" data-lang="en">Portfolio</h2>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="job-header">
-        <span class="job-title">Content Marketing Manager</span>
-        <span class="job-period">2024–2026</span>
-      </div>
-      <div class="job-company">Universidad Iberoamericana CDMX</div>
-      <div class="job-tags">
-        <span class="tag">TikTok</span><span class="tag">Instagram</span><span class="tag">Salesforce</span><span class="tag" data-lang="es">Producción audiovisual</span><span class="tag" data-lang="en">Audiovisual</span><span class="tag" data-lang="es">Alianzas</span><span class="tag" data-lang="en">Partnerships</span>
-      </div>
-      <div class="job-stat">
-        <span class="job-stat-number">+150</span>
-        <span class="job-stat-label" data-lang="es">piezas audiovisuales producidas</span>
-        <span class="job-stat-label" data-lang="en">audiovisual pieces produced</span>
-      </div>
-
-      <!-- ====================================================================
-           PORTAFOLIO DE LA EXPERIENCIA  ·  cómo agregar más piezas
-           --------------------------------------------------------------------
-           1. Guarda la imagen en  img/<carpeta-de-esta-experiencia>/  (p. ej.
-              img/ibero/, img/casa-del-lago/). Redúcela a ~800px de ancho y
-              comprímela (idealmente .webp) — no subas fotos de cámara sin optimizar.
-           2. Copia uno de los bloques de abajo dentro de <div class="work-gallery">.
-
-           VIDEO / REEL (abre Instagram en pestaña nueva):
-             <a class="gallery-item gallery-video" href="URL_DEL_REEL" target="_blank" rel="noopener" aria-label="Ver reel">
-               <img src="img/ibero/ARCHIVO.webp" alt="DESCRIPCIÓN" loading="lazy">
-               <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
-               <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-             </a>
-
-           IMAGEN (abre el lightbox in-page):
-             <button class="gallery-item" onclick="openLightbox('img/ibero/ARCHIVO.webp','DESCRIPCIÓN')">
-               <img src="img/ibero/ARCHIVO.webp" alt="DESCRIPCIÓN" loading="lazy">
-             </button>
-      ===================================================================== -->
-      <div class="gallery-label" data-lang="es">Trabajo destacado</div>
-      <div class="gallery-label" data-lang="en">Selected work</div>
-      <div class="work-gallery">
-        <a class="gallery-item gallery-video" href="https://www.instagram.com/p/DXsX3-dDUu0/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero">
-          <img src="img/ibero/ibero1.webp" alt="Reel de Instagram — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.tiktok.com/@esteban_said/video/7439156692694191415" target="_blank" rel="noopener" aria-label="Ver video en TikTok — colaboración Vida Ibero">
-          <img src="img/ibero/ibero2.webp" alt="TikTok — colaboración para Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>TikTok</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.youtube.com/watch?v=dtALF6OxGTw" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Vida Ibero">
-          <img src="img/ibero/ibero3.webp" alt="Video de YouTube — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>Video</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.instagram.com/p/C9ObuHdMqoD/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero">
-          <img src="img/ibero/ibero4.webp" alt="Reel de Instagram — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.instagram.com/p/DWPpbm7jf4G/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero">
-          <img src="img/ibero/ibero5.webp" alt="Reel de Instagram — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.instagram.com/p/DAzjbccs2sB/" target="_blank" rel="noopener" aria-label="Ver reel en Instagram — Vida Ibero">
-          <img src="img/ibero/ibero6.webp" alt="Reel de Instagram — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Reel</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.tiktok.com/@vida_ibero/video/7430454572323212549" target="_blank" rel="noopener" aria-label="Ver video en TikTok — Vida Ibero">
-          <img src="img/ibero/ibero7.webp" alt="TikTok — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>TikTok</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.tiktok.com/@vida_ibero/video/7484120254927457542" target="_blank" rel="noopener" aria-label="Ver video en TikTok — Vida Ibero">
-          <img src="img/ibero/ibero8.webp" alt="TikTok — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>TikTok</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.tiktok.com/@vida_ibero/video/7545989311888428295" target="_blank" rel="noopener" aria-label="Ver video en TikTok — Vida Ibero">
-          <img src="img/ibero/ibero9.webp" alt="TikTok — Vida Ibero" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>TikTok</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="job-header">
-        <span class="job-title">Social Media Manager</span>
-        <span class="job-period">2018–2024</span>
-      </div>
-      <div class="job-company">Casa del Lago UNAM</div>
-      <div class="job-tags">
-        <span class="tag">Facebook</span><span class="tag">X / Twitter</span><span class="tag" data-lang="es">Editorial cine</span><span class="tag" data-lang="en">Film editorial</span><span class="tag" data-lang="es">Métricas</span><span class="tag" data-lang="en">Analytics</span>
-      </div>
-      <div class="job-stat">
-        <span class="job-stat-number">+50%</span>
-        <span class="job-stat-label" data-lang="es">crecimiento de audiencia en 6 años</span>
-        <span class="job-stat-label" data-lang="en">audience growth over 6 years</span>
-      </div>
-      <div class="gallery-label" data-lang="es">Trabajo destacado</div>
-      <div class="gallery-label" data-lang="en">Selected work</div>
-      <div class="work-gallery">
-        <a class="gallery-item gallery-video" href="https://casadellago.unam.mx/nuevo/arte-contemporaneo-a-c" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Arte contemporáneo">
-          <img src="img/casa%20del%20lago/casadellago1.webp" alt="Casa del Lago UNAM — Arte contemporáneo" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Web</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://casadellago.unam.mx/nuevo/ciclo-cyberpunk" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Ciclo Cyberpunk">
-          <img src="img/casa%20del%20lago/casadellago2.webp" alt="Casa del Lago UNAM — Ciclo Cyberpunk" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Web</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://casadellago.unam.mx/nuevo/ciclo-raices-somos" target="_blank" rel="noopener" aria-label="Ver programa en Casa del Lago UNAM — Ciclo Raíces Somos">
-          <img src="img/casa%20del%20lago/casadellago3.webp" alt="Casa del Lago UNAM — Ciclo Raíces Somos" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Web</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="job-header">
-        <span class="job-title">Social Media Manager</span>
-        <span class="job-period">2016–2018</span>
-      </div>
-      <div class="job-company">Festival Internacional de Cine de Morelia — FICM</div>
-      <div class="job-tags">
-        <span class="tag">YouTube</span><span class="tag">Google+</span><span class="tag" data-lang="es">Reputación digital</span><span class="tag" data-lang="en">Digital reputation</span><span class="tag" data-lang="es">Cobertura</span><span class="tag" data-lang="en">Event coverage</span>
-      </div>
-      <div class="job-stat">
-        <span class="job-stat-number">+80%</span>
-        <span class="job-stat-label" data-lang="es">alcance combinado en 5 plataformas</span>
-        <span class="job-stat-label" data-lang="en">combined reach across 5 platforms</span>
-      </div>
-      <div class="gallery-label" data-lang="es">Trabajo destacado</div>
-      <div class="gallery-label" data-lang="en">Selected work</div>
-      <div class="work-gallery">
-        <a class="gallery-item gallery-video" href="https://www.youtube.com/watch?v=4qZxqHOOU4k" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM">
-          <img src="img/ficm/ficm1.webp" alt="Video de YouTube — Festival Internacional de Cine de Morelia" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>Video</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.youtube.com/watch?v=Xd-0YSNoVGE" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM">
-          <img src="img/ficm/ficm2.webp" alt="Video de YouTube — Festival Internacional de Cine de Morelia" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>Video</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://www.youtube.com/watch?v=uUhuSZUzPCE" target="_blank" rel="noopener" aria-label="Ver video en YouTube — FICM">
-          <img src="img/ficm/ficm3.webp" alt="Video de YouTube — Festival Internacional de Cine de Morelia" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>Video</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="job-header">
-        <span class="job-title" data-lang="es">Asistente de Dirección</span>
-        <span class="job-title" data-lang="en">Director's Assistant</span>
-        <span class="job-period">2012–2014</span>
-      </div>
-      <div class="job-company">Cinema 23 — Premios Fénix</div>
-      <div class="gallery-label" data-lang="es">Trabajo destacado</div>
-      <div class="gallery-label" data-lang="en">Selected work</div>
-      <div class="work-gallery">
-        <a class="gallery-item gallery-video" href="https://www.youtube.com/watch?v=uPNtxxuWMfs" target="_blank" rel="noopener" aria-label="Ver video en YouTube — Cinema 23 Premios Fénix">
-          <img src="img/cinema23/cinema1.webp" alt="Video de YouTube — Cinema 23 Premios Fénix" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>Video</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://cinema23.com/cuaderno/errancias/" target="_blank" rel="noopener" aria-label="Leer artículo en Cinema 23 — Errancias">
-          <img src="img/cinema23/cinema2.webp" alt="Artículo en Cinema 23 — Errancias" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Web</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></span>
-        </a>
-        <a class="gallery-item gallery-video" href="https://cinema23.com/cuaderno/luis-ospina-todo-comenzo-por-el-archivo/" target="_blank" rel="noopener" aria-label="Leer artículo en Cinema 23 — Luis Ospina">
-          <img src="img/cinema23/cinema3.webp" alt="Artículo en Cinema 23 — Luis Ospina: Todo comenzó por el archivo" loading="lazy">
-          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>Web</span>
-          <span class="gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="section-wrap" id="habilidades">
-  <div class="section-label" data-lang="es">Competencias</div>
-  <div class="section-label" data-lang="en">What I Bring</div>
-  <h2 class="section-title" data-lang="es">Habilidades</h2>
-  <h2 class="section-title" data-lang="en">Skills</h2>
-
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-label" data-lang="es">Plataformas</div>
-      <div class="skill-card-label" data-lang="en">Platforms</div>
-      <ul class="skill-list">
-        <li>TikTok</li><li>Instagram</li><li>Facebook</li><li>X / Twitter</li><li>YouTube</li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label" data-lang="es">Áreas de Especialización</div>
-      <div class="skill-card-label" data-lang="en">Areas of Expertise</div>
-      <ul class="skill-list" data-lang="es">
-        <li>Estrategia de contenido</li><li>Gestión de comunidades</li><li>Creación audiovisual</li><li>Producción de eventos</li><li>Alianzas estratégicas</li>
-      </ul>
-      <ul class="skill-list" data-lang="en">
-        <li>Content Strategy</li><li>Community Management</li><li>Audiovisual Production</li><li>Event Production</li><li>Strategic Partnerships</li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label" data-lang="es">Idiomas</div>
-      <div class="skill-card-label" data-lang="en">Languages</div>
-      <ul class="skill-list" data-lang="es">
-        <li>Español — Nativo</li><li>Inglés — Avanzado</li><li>Portugués — CELPE-BRAS</li><li>Francés — Básico</li>
-      </ul>
-      <ul class="skill-list" data-lang="en">
-        <li>Spanish — Native</li><li>English — Advanced</li><li>Portuguese — CELPE-BRAS</li><li>French — Basic</li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label">Software</div>
-      <ul class="skill-list">
-        <li>CapCut</li><li>Adobe CC</li><li>Microsoft Office</li><li>Keynote</li><li>Salesforce</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="section-wrap" id="formacion">
-  <div class="section-label" data-lang="es">Educación</div>
-  <div class="section-label" data-lang="en">Education</div>
-  <h2 class="section-title" data-lang="es">Formación académica</h2>
-  <h2 class="section-title" data-lang="en">Academic Background</h2>
-
-  <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-degree" data-lang="es">Licenciatura en Ciencias de la Comunicación</div>
-      <div class="edu-degree" data-lang="en">B.A. in Communication Sciences</div>
-      <div class="edu-school">UNAM, Ciudad Universitaria</div>
-      <div class="edu-year">2008 – 2013 · Céd. Prof. 9886747</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-degree" data-lang="es">Diplomado en Psicología y Liderazgo Organizacional</div>
-      <div class="edu-degree" data-lang="en">Diploma in Organizational Psychology & Leadership</div>
-      <div class="edu-school">Universidad Iberoamericana CDMX</div>
-      <div class="edu-year">2025 – 2026</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-degree" data-lang="es">Diplomado en Diseño Gráfico y Estrategias Multimedia</div>
-      <div class="edu-degree" data-lang="en">Diploma in Graphic Design & Multimedia Strategies</div>
-      <div class="edu-school">Centro de Arte, Diseño y Música</div>
-      <div class="edu-year">2012 – 2013</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-degree" data-lang="es">Capacitación y Certificación Google Ads</div>
-      <div class="edu-degree" data-lang="en">Google Ads Certification</div>
-      <div class="edu-school">Cultura UNAM</div>
-      <div class="edu-year">2019</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-degree" data-lang="es">Certificación “The Fundamentals of Digital Marketing”</div>
-      <div class="edu-degree" data-lang="en">Certification “The Fundamentals of Digital Marketing”</div>
-      <div class="edu-school">Google Skillshop</div>
-      <div class="edu-year">2019</div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contacto">
-  <div class="contact-blob contact-blob-1"></div>
-  <div class="contact-blob contact-blob-2"></div>
-  <div class="section-label" data-lang="es">Contacto</div>
-  <div class="section-label" data-lang="en">Contact</div>
-  <h2 class="contact-title" data-lang="es">¿Hablamos?</h2>
-  <h2 class="contact-title" data-lang="en">Let's work together</h2>
-  <div class="contact-links">
-    <a href="mailto:fcocalu@gmail.com" class="btn-primary">fcocalu@gmail.com</a>
-    <a href="tel:+525534495228" class="btn-ghost">+52 55 3449 5228</a>
-    <a href="https://www.linkedin.com/in/fcocalu/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
-    <a href="PacoCL_CV_ES.pdf" download class="btn-ghost" data-lang="es"><span class="icon-dl"></span>CV Español</a>
-    <a href="PacoCL_CV_EN.pdf" download class="btn-ghost" data-lang="en"><span class="icon-dl"></span>CV English</a>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-  <button class="lightbox-close" aria-label="Cerrar" onclick="closeLightbox()">✕</button>
-  <img id="lightbox-img" src="" alt="">
-  <div class="lightbox-caption" id="lightbox-caption"></div>
-</div>
-
-<footer>
-  <p>© 2026 Francisco Calleja Luna — CDMX, México</p>
-  <p data-lang="es">Hecho con cariño y mucho contenido.</p>
-  <p data-lang="en">Made with care and a lot of content.</p>
-</footer>
-
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Manrope,system-ui,sans-serif}
+  a{color:#000}
+  a:hover{opacity:.7}
+  .fcl-icon-link{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;white-space:nowrap;transition:text-shadow .15s}
+  .fcl-nav-link{transition:text-shadow .15s}
+  .lbtn{transition:text-shadow .15s}
+  .fcl-nav-link:hover,.lbtn:hover{text-shadow:2px 0 0 #000, -2px 0 0 rgba(0,0,0,.4)}
+  .fcl-icon-link:hover{text-shadow:1px 0 0 rgba(0,0,0,.6), -1px 0 0 rgba(0,0,0,.3)}
+  .fcl-btn-solid:hover{text-shadow:1px 0 0 rgba(255,255,255,.6), -1px 0 0 rgba(255,255,255,.35)}
+  .fcl-hero-name{transition:text-shadow .15s}
+  .fcl-hero-name:hover{text-shadow:6px 0 0 #000, -6px 0 0 rgba(0,0,0,.35)}
+  @media (min-width:769px){
+    .fcl-nav-desktop{display:flex !important}
+    .fcl-nav-toggle{display:none !important}
+    #pf-mobile-menu{display:none !important}
+  }
+</style>
 <script>
-  function setLang(lang) {
-    document.body.classList.toggle('en', lang === 'en');
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      var active = btn.textContent === lang.toUpperCase();
-      btn.classList.toggle('active', active);
-      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  function pf_set_lang(root_id, lang) {
+    var root = document.getElementById(root_id);
+    var use_en = lang === 'en';
+    root.style.background = use_en ? root.getAttribute('data-bg-en') : root.getAttribute('data-bg-es');
+    root.querySelectorAll('[data-es]').forEach(function(el){ el.style.display = use_en ? 'none' : (el.getAttribute('data-disp')||'block'); });
+    root.querySelectorAll('[data-en]').forEach(function(el){ el.style.display = use_en ? (el.getAttribute('data-disp')||'block') : 'none'; });
+    root.querySelectorAll('.lbtn').forEach(function(btn){
+      var active = btn.getAttribute('data-lang') === lang;
+      btn.style.opacity = active ? '1' : '0.45';
+      btn.style.textDecoration = active ? 'underline' : 'none';
     });
-    document.documentElement.setAttribute('lang', lang);
   }
-
-  // NAV MÓVIL
-  function toggleNav() {
-    var nav = document.querySelector('nav');
-    var btn = document.querySelector('.nav-toggle');
-    var open = nav.classList.toggle('nav-open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  function pf_toggle_nav() {
+    var menu = document.getElementById('pf-mobile-menu');
+    var open = menu.style.display === 'flex';
+    menu.style.display = open ? 'none' : 'flex';
   }
-
-  document.querySelectorAll('.nav-links a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      var nav = document.querySelector('nav');
-      if (nav.classList.contains('nav-open')) { toggleNav(); }
-    });
-  });
-
-  // LIGHTBOX
-  var lightbox = document.getElementById('lightbox');
-  var lightboxImg = document.getElementById('lightbox-img');
-  var lightboxCaption = document.getElementById('lightbox-caption');
-  var lastFocused = null;
-
-  function openLightbox(src, caption) {
-    lastFocused = document.activeElement;
-    lightboxImg.src = src;
-    lightboxImg.alt = caption || '';
-    lightboxCaption.textContent = caption || '';
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lightbox.querySelector('.lightbox-close').focus();
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    lightboxImg.src = '';
-    document.body.style.overflow = '';
-    if (lastFocused) { lastFocused.focus(); }
-  }
-
-  lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) { closeLightbox(); }
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('open')) { closeLightbox(); }
-  });
-
-  // SCROLL REVEAL
-  var revealEls = document.querySelectorAll('.timeline-item, .stat-item, .skill-card, .edu-card');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function(el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function(el) { el.classList.add('in-view'); });
-  }
-
-  const sections = document.querySelectorAll('section[id], div[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', function() {
-    var pos = window.scrollY + 120;
-    sections.forEach(function(sec) {
-      if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
-        navLinks.forEach(function(a) {
-          a.style.color = a.getAttribute('href') === '#' + sec.id ? 'var(--text)' : '';
-        });
-      }
-    });
-  });
 </script>
+</helmet>
+
+<div id="root-final" data-bg-es="radial-gradient(140% 140% at 0% 0%, #ffe046 0%, #e26a00 50%, #1ebda5 100%) fixed" data-bg-en="radial-gradient(140% 140% at 0% 0%, #f8c94a 0%, #ef7d35 25%, #dd4550 50%, #93709f 75%, #4a90e8 100%) fixed" style="background:radial-gradient(140% 140% at 0% 0%, #ffe046 0%, #e26a00 50%, #1ebda5 100%) fixed;color:#000;font-family:Manrope,sans-serif;min-height:100vh" data-screen-label="Portafolio">
+
+  <nav style="display:flex;justify-content:space-between;align-items:center;padding:1.1rem clamp(1.25rem,4vw,2rem);border-bottom:1px solid #000;position:relative">
+    <span style="font-family:Dela Gothic One,sans-serif;font-size:1rem;text-shadow:2px 0 0 #000, -2px 0 0 rgba(0,0,0,.35)">FCL</span>
+    <div style="display:none;gap:1.4rem;align-items:center" class="fcl-nav-desktop">
+      <a href="#perfil" data-es="1" data-disp="inline" class="fcl-nav-link" style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Perfil</a>
+      <a href="#perfil" data-en="1" data-disp="inline" class="fcl-nav-link" style="display:none;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Profile</a>
+      <a href="#trayectoria" data-es="1" data-disp="inline" class="fcl-nav-link" style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Trayectoria</a>
+      <a href="#trayectoria" data-en="1" data-disp="inline" class="fcl-nav-link" style="display:none;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Career</a>
+      <a href="#habilidades" data-es="1" data-disp="inline" class="fcl-nav-link" style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Habilidades</a>
+      <a href="#habilidades" data-en="1" data-disp="inline" class="fcl-nav-link" style="display:none;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Skills</a>
+      <a href="#formacion" data-es="1" data-disp="inline" class="fcl-nav-link" style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Educación</a>
+      <a href="#formacion" data-en="1" data-disp="inline" class="fcl-nav-link" style="display:none;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Education</a>
+      <a href="#contacto" data-es="1" data-disp="inline" class="fcl-nav-link" style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Contacto</a>
+      <a href="#contacto" data-en="1" data-disp="inline" class="fcl-nav-link" style="display:none;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">Contact</a>
+      <button class="lbtn" data-lang="es" onclick="pf_set_lang('root-final','es')" style="cursor:pointer;border:none;background:none;font-family:Manrope,sans-serif;font-size:.68rem;font-weight:800;opacity:1;text-decoration:underline">ES</button>
+      <button class="lbtn" data-lang="en" onclick="pf_set_lang('root-final','en')" style="cursor:pointer;border:none;background:none;font-family:Manrope,sans-serif;font-size:.68rem;font-weight:800;opacity:.45">EN</button>
+    </div>
+    <button onclick="pf_toggle_nav()" aria-label="Abrir menú" style="display:flex;flex-direction:column;gap:4px;width:32px;height:32px;padding:6px;background:none;border:none;cursor:pointer" class="fcl-nav-toggle">
+      <span style="display:block;width:100%;height:2px;background:#000"></span>
+      <span style="display:block;width:100%;height:2px;background:#000"></span>
+      <span style="display:block;width:100%;height:2px;background:#000"></span>
+    </button>
+    <div id="pf-mobile-menu" style="display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #000;flex-direction:column;padding:.5rem clamp(1.25rem,4vw,2rem) 1rem;gap:.85rem;z-index:10">
+      <a href="#perfil" data-es="1" data-disp="block" class="fcl-nav-link" style="font-size:.85rem;text-decoration:none">Perfil</a>
+      <a href="#perfil" data-en="1" data-disp="block" class="fcl-nav-link" style="display:none;font-size:.85rem;text-decoration:none">Profile</a>
+      <a href="#trayectoria" data-es="1" data-disp="block" class="fcl-nav-link" style="font-size:.85rem;text-decoration:none">Trayectoria</a>
+      <a href="#trayectoria" data-en="1" data-disp="block" class="fcl-nav-link" style="display:none;font-size:.85rem;text-decoration:none">Career</a>
+      <a href="#habilidades" data-es="1" data-disp="block" class="fcl-nav-link" style="font-size:.85rem;text-decoration:none">Habilidades</a>
+      <a href="#habilidades" data-en="1" data-disp="block" class="fcl-nav-link" style="display:none;font-size:.85rem;text-decoration:none">Skills</a>
+      <a href="#formacion" data-es="1" data-disp="block" class="fcl-nav-link" style="font-size:.85rem;text-decoration:none">Educación</a>
+      <a href="#formacion" data-en="1" data-disp="block" class="fcl-nav-link" style="display:none;font-size:.85rem;text-decoration:none">Education</a>
+      <a href="#contacto" data-es="1" data-disp="block" class="fcl-nav-link" style="font-size:.85rem;text-decoration:none">Contacto</a>
+      <a href="#contacto" data-en="1" data-disp="block" class="fcl-nav-link" style="display:none;font-size:.85rem;text-decoration:none">Contact</a>
+      <div style="display:flex;gap:1rem">
+        <button class="lbtn" data-lang="es" onclick="pf_set_lang('root-final','es')" style="cursor:pointer;border:none;background:none;font-family:Manrope,sans-serif;font-size:.8rem;font-weight:800;opacity:1;text-decoration:underline">ES</button>
+        <button class="lbtn" data-lang="en" onclick="pf_set_lang('root-final','en')" style="cursor:pointer;border:none;background:none;font-family:Manrope,sans-serif;font-size:.8rem;font-weight:800;opacity:.45">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="perfil" style="padding:clamp(3rem,10vw,5rem) clamp(1.25rem,4vw,2rem) clamp(2rem,6vw,3rem)">
+    <div class="fcl-hero-name" style="font-family:Dela Gothic One,sans-serif;font-size:clamp(2.5rem,8vw,4.6rem);line-height:1;text-shadow:4px 0 0 #000, -4px 0 0 rgba(0,0,0,.3)">FRANCISCO<br>CALLEJA LUNA</div>
+    <div data-es="1" data-disp="block" style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:1rem">Content & Social Media Manager // 10+ años</div>
+    <div data-en="1" data-disp="block" style="display:none;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:1rem">Content & Social Media Manager // 10+ years</div>
+    <p data-es="1" data-disp="block" style="font-size:.92rem;line-height:1.75;max-width:60ch;margin-top:1.5rem">Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca. Track record de crecimiento de audiencia de +50% y coordinación de equipos y proveedores para campañas multiplataforma (TikTok, Instagram, Facebook, X, YouTube).</p>
+    <p data-en="1" data-disp="block" style="display:none;font-size:.92rem;line-height:1.75;max-width:60ch;margin-top:1.5rem">Content & Social Media Manager with 10+ years driving digital strategy from concept to execution: audiovisual production, community management, event marketing, and brand partnerships. Track record of 50%+ audience growth and full-cycle coordination of teams and vendors for multi-platform campaigns (TikTok, Instagram, Facebook, X, YouTube).</p>
+    <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+      <a href="PacoCL_CV_ES.pdf" download data-es="1" data-disp="inline-flex" class="fcl-icon-link fcl-btn-solid" style="padding:.8rem 1.5rem;background:#000;color:#fff;font-size:.78rem;font-weight:800;text-transform:uppercase;clip-path:polygon(0 0,100% 0,96% 100%,0% 100%)">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v10M6 9l4 4 4-4M4 15v1a2 2 0 002 2h8a2 2 0 002-2v-1"/></svg>Descargar CV
+      </a>
+      <a href="PacoCL_CV_EN.pdf" download data-en="1" data-disp="inline-flex" class="fcl-icon-link fcl-btn-solid" style="display:none;padding:.8rem 1.5rem;background:#000;color:#fff;font-size:.78rem;font-weight:800;text-transform:uppercase;clip-path:polygon(0 0,100% 0,96% 100%,0% 100%)">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v10M6 9l4 4 4-4M4 15v1a2 2 0 002 2h8a2 2 0 002-2v-1"/></svg>Download CV
+      </a>
+      <a href="https://www.linkedin.com/in/fcocalu/" target="_blank" rel="noopener" class="fcl-icon-link" style="padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="16" height="16" rx="2"/><text x="5.2" y="13.5" font-size="8" fill="currentColor" stroke="none" font-family="Arial">in</text></svg>LinkedIn
+      </a>
+      <a href="https://wa.me/525534495228" target="_blank" rel="noopener" class="fcl-icon-link" style="padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17l1.1-3.3A6.5 6.5 0 1110 16.5a6.6 6.6 0 01-2.9-.66z"/><path d="M7.5 8.5c0 3 2.5 4.5 4.5 4.2" stroke-linecap="round"/></svg>WhatsApp
+      </a>
+      <a href="mailto:fcocalu@gmail.com" class="fcl-icon-link" style="padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="1.5"/><path d="M3 5.5l7 6 7-6"/></svg>fcocalu@gmail.com
+      </a>
+    </div>
+  </section>
+
+  <section style="padding:clamp(1.5rem,5vw,2.5rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));row-gap:1.5rem">
+      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">10+</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Años de experiencia</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Years of experience</div></div>
+      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">7</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Organizaciones</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Organizations</div></div>
+      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">4</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Idiomas</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Languages</div></div>
+      <div style="border-left:1px solid #000;border-right:1px solid #000;padding:0 1.5rem"><div style="font-family:Dela Gothic One,sans-serif;font-size:2.2rem">+50%</div><div data-es="1" data-disp="block" style="font-size:.68rem;font-weight:700">Crecimiento audiencia</div><div data-en="1" data-disp="block" style="display:none;font-size:.68rem;font-weight:700">Audience growth</div></div>
+    </div>
+  </section>
+
+  <section id="trayectoria" style="padding:clamp(2rem,6vw,3rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
+    <div data-es="1" data-disp="block" style="font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">TRAYECTORIA</div>
+    <div data-en="1" data-disp="block" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2.1rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">CAREER</div>
+
+    <div style="display:flex;flex-direction:column">
+      <div style="border-top:1px solid #000;padding:1.5rem 0">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+          <span style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Content Marketing Manager</span>
+          <span style="font-size:.78rem;font-weight:700">2024–2026</span>
+        </div>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Universidad Iberoamericana CDMX</div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.82rem">
+          <span><span style="font-family:Dela Gothic One,sans-serif">+150</span> <span data-es="1" data-disp="inline">piezas producidas</span><span data-en="1" data-disp="inline" style="display:none">pieces produced</span></span>
+          <span>TikTok · Instagram · Salesforce</span>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <img src="img/ibero/ibero1.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero2.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero3.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero4.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero5.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero6.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero7.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero8.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+          <img src="img/ibero/ibero9.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Ibero">
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #000;padding:1.5rem 0">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+          <span style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Social Media Manager</span>
+          <span style="font-size:.78rem;font-weight:700">2018–2024</span>
+        </div>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Casa del Lago UNAM</div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.82rem">
+          <span><span style="font-family:Dela Gothic One,sans-serif">+50%</span> <span data-es="1" data-disp="inline">crecimiento en 6 años</span><span data-en="1" data-disp="inline" style="display:none">growth over 6 years</span></span>
+          <span>Facebook · X/Twitter</span>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <img src="img/casadellago/casadellago1.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Casa del Lago">
+          <img src="img/casadellago/casadellago2.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Casa del Lago">
+          <img src="img/casadellago/casadellago3.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Casa del Lago">
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #000;padding:1.5rem 0">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+          <span style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Social Media Manager</span>
+          <span style="font-size:.78rem;font-weight:700">2016–2018</span>
+        </div>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Festival Internacional de Cine de Morelia — FICM</div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.82rem">
+          <span><span style="font-family:Dela Gothic One,sans-serif">+80%</span> <span data-es="1" data-disp="inline">alcance combinado en 5 plataformas</span><span data-en="1" data-disp="inline" style="display:none">combined reach across 5 platforms</span></span>
+          <span>YouTube · Google+</span>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <img src="img/ficm/ficm1.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="FICM">
+          <img src="img/ficm/ficm2.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="FICM">
+          <img src="img/ficm/ficm3.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="FICM">
+        </div>
+      </div>
+
+      <div style="border-top:1px solid #000;border-bottom:1px solid #000;padding:1.5rem 0">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.4rem">
+          <span data-es="1" data-disp="inline" style="font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Asistente de Dirección</span>
+          <span data-en="1" data-disp="inline" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:1.1rem">Director's Assistant</span>
+          <span style="font-size:.78rem;font-weight:700">2012–2014</span>
+        </div>
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:.75rem">Cinema 23 — Premios Fénix</div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <img src="img/cinema23/cinema1.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Cinema 23">
+          <img src="img/cinema23/cinema2.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Cinema 23">
+          <img src="img/cinema23/cinema3.webp" style="width:clamp(70px,14vw,110px);aspect-ratio:16/9;object-fit:cover" alt="Cinema 23">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades" style="padding:clamp(2rem,6vw,3rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
+    <div data-es="1" data-disp="block" style="font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3);text-transform:uppercase">Habilidades</div>
+    <div data-en="1" data-disp="block" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3);text-transform:uppercase">Skills</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));row-gap:1.5rem">
+      <div style="border-left:1px solid #000;padding:0 1.5rem"><div style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Plataformas</div><div style="font-size:.78rem;line-height:1.8">TikTok · Instagram · Facebook · X · YouTube</div></div>
+      <div style="border-left:1px solid #000;padding:0 1.5rem"><div data-es="1" data-disp="block" style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Especialización</div><div data-en="1" data-disp="block" style="display:none;font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Expertise</div><div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8">Contenido · Comunidades · Audiovisual · Alianzas</div><div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8">Content · Community · Audiovisual · Partnerships</div></div>
+      <div style="border-left:1px solid #000;padding:0 1.5rem"><div data-es="1" data-disp="block" style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Idiomas</div><div data-en="1" data-disp="block" style="display:none;font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Languages</div><div data-es="1" data-disp="block" style="font-size:.78rem;line-height:1.8">Español · Inglés · Portugués · Francés</div><div data-en="1" data-disp="block" style="display:none;font-size:.78rem;line-height:1.8">Spanish · English · Portuguese · French</div></div>
+      <div style="border-left:1px solid #000;border-right:1px solid #000;padding:0 1.5rem"><div style="font-size:.64rem;font-weight:800;text-transform:uppercase;margin-bottom:.5rem">Software</div><div style="font-size:.78rem;line-height:1.8">CapCut · Adobe CC · Office · Salesforce</div></div>
+    </div>
+  </section>
+
+  <section id="formacion" style="padding:clamp(2rem,6vw,3rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
+    <div data-es="1" data-disp="block" style="font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3);text-transform:uppercase">Formación académica</div>
+    <div data-en="1" data-disp="block" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:clamp(1.6rem,4vw,2rem);margin-bottom:1.75rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3);text-transform:uppercase">Academic Background</div>
+    <div style="display:flex;flex-direction:column">
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Licenciatura en Ciencias de la Comunicación</div>
+        <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">B.A. in Communication Sciences</div>
+        <div style="font-size:.82rem">UNAM, Ciudad Universitaria · 2008–2013</div>
+      </div>
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Diplomado en Psicología y Liderazgo Organizacional</div>
+        <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Diploma in Organizational Psychology & Leadership</div>
+        <div style="font-size:.82rem">Universidad Iberoamericana CDMX · 2025–2026</div>
+      </div>
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Diplomado en Diseño Gráfico y Estrategias Multimedia</div>
+        <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Diploma in Graphic Design & Multimedia Strategies</div>
+        <div style="font-size:.82rem">Centro de Arte, Diseño y Música · 2012–2013</div>
+      </div>
+      <div style="border-top:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Capacitación y Certificación Google Ads</div>
+        <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Google Ads Certification</div>
+        <div style="font-size:.82rem">Cultura UNAM · 2019</div>
+      </div>
+      <div style="border-top:1px solid #000;border-bottom:1px solid #000;padding:1.1rem 0">
+        <div data-es="1" data-disp="block" style="font-weight:800;font-size:.9rem">Certificación "The Fundamentals of Digital Marketing"</div>
+        <div data-en="1" data-disp="block" style="display:none;font-weight:800;font-size:.9rem">Certification "The Fundamentals of Digital Marketing"</div>
+        <div style="font-size:.82rem">Google Skillshop · 2019</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="padding:clamp(3rem,8vw,4rem) clamp(1.25rem,4vw,2rem);border-top:1px solid #000">
+    <div data-es="1" data-disp="block" style="font-family:Dela Gothic One,sans-serif;font-size:clamp(1.8rem,5vw,2.2rem);margin-bottom:1.5rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">¿HABLAMOS?</div>
+    <div data-en="1" data-disp="block" style="display:none;font-family:Dela Gothic One,sans-serif;font-size:clamp(1.8rem,5vw,2.2rem);margin-bottom:1.5rem;text-shadow:3px 0 0 #000, -3px 0 0 rgba(0,0,0,.3)">LET'S TALK</div>
+    <div style="display:flex;gap:1.25rem;flex-wrap:wrap">
+      <a href="mailto:fcocalu@gmail.com" class="fcl-icon-link fcl-btn-solid" style="padding:.8rem 1.5rem;background:#000;color:#fff;font-size:.78rem;font-weight:800;text-transform:uppercase;clip-path:polygon(0 0,100% 0,96% 100%,0% 100%)">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="1.5"/><path d="M3 5.5l7 6 7-6"/></svg>fcocalu@gmail.com
+      </a>
+      <a href="https://wa.me/525534495228" target="_blank" rel="noopener" class="fcl-icon-link" style="padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17l1.1-3.3A6.5 6.5 0 1110 16.5a6.6 6.6 0 01-2.9-.66z"/><path d="M7.5 8.5c0 3 2.5 4.5 4.5 4.2" stroke-linecap="round"/></svg>WhatsApp
+      </a>
+      <a href="https://www.linkedin.com/in/fcocalu/" target="_blank" rel="noopener" class="fcl-icon-link" style="padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="16" height="16" rx="2"/><text x="5.2" y="13.5" font-size="8" fill="currentColor" stroke="none" font-family="Arial">in</text></svg>LinkedIn
+      </a>
+      <a href="PacoCL_CV_ES.pdf" download data-es="1" data-disp="inline-flex" class="fcl-icon-link" style="padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v10M6 9l4 4 4-4M4 15v1a2 2 0 002 2h8a2 2 0 002-2v-1"/></svg>Descargar CV
+      </a>
+      <a href="PacoCL_CV_EN.pdf" download data-en="1" data-disp="inline-flex" class="fcl-icon-link" style="display:none;padding:.8rem 1.5rem;border:1px solid #000;font-size:.78rem;font-weight:800;text-transform:uppercase">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3v10M6 9l4 4 4-4M4 15v1a2 2 0 002 2h8a2 2 0 002-2v-1"/></svg>Download CV
+      </a>
+    </div>
+  </section>
+
+  <footer style="padding:1.5rem clamp(1.25rem,4vw,2rem);border-top:1px solid #000;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+    <p style="font-size:.72rem">© 2026 Francisco Calleja Luna — CDMX, México</p>
+    <p data-es="1" data-disp="block" style="font-size:.72rem">Hecho con cariño y mucho contenido.</p>
+    <p data-en="1" data-disp="block" style="display:none;font-size:.72rem">Made with care and a lot of content.</p>
+  </footer>
+
+</div>
+</x-dc>
 </body>
 </html>

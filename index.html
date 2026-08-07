@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Francisco Calleja Luna — Portafolio</title>
+<meta name="description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Francisco Calleja Luna — Portafolio">
+<meta property="og:description" content="Content & Social Media Manager con +10 años liderando estrategias digitales de principio a fin: producción audiovisual, gestión de comunidades, marketing de eventos y partnerships de marca.">
+<meta property="og:url" content="https://pancholuna.github.io">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -40,6 +48,7 @@
   function pf_set_lang(root_id, lang) {
     var root = document.getElementById(root_id);
     var use_en = lang === 'en';
+    document.documentElement.lang = lang;
     root.style.background = use_en ? root.getAttribute('data-bg-en') : root.getAttribute('data-bg-es');
     root.querySelectorAll('[data-es]').forEach(function(el){ el.style.display = use_en ? 'none' : (el.getAttribute('data-disp')||'block'); });
     root.querySelectorAll('[data-en]').forEach(function(el){ el.style.display = use_en ? (el.getAttribute('data-disp')||'block') : 'none'; });
